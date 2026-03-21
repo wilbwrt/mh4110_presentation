@@ -33,8 +33,37 @@
 
 \begin{frame}{Black-Scholes Equation}
     \begin{itemize}
-        \item 
+        \item Second order parabolic partial differential equation
+        \item For a stock which does not pay dividends, we have: 
     \end{itemize}
+    \[
+    \frac{\partial c}{partial t}
+    + r S \frac{\partial c}{\partial S}
+    + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 c}{\partial^2 S}
+    = r c
+    \]
+    \begin{itemize}
+        \item t = time
+        \item c = call option price
+        \item p = put option price
+        \item S = spot stock price
+        \item r = risk free interest rate 
+        \item \sigma = stock volatility
+        \item S_0 is spot stock price at time zero
+        \item K is strike price
+        \item T is time to maturity
+        \item N(x) is Cumulative Distribution Probability
+        \item Solutions to this partial differential equation are the Black-Scholes-Merton formulae, given by:
+    \end{itemize}
+    \[ 
+    c = S_0 N(d_1) - K
+    \exp(-r T) N(d_2)
+    \]
+    \[
+    p = K
+    \exp(-r T) N(-d_2) - S_0 N(-d_1)
+        
+
 \end{frame}
 
 \subsection{Boundary Conditions}
