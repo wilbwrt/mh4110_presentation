@@ -53,15 +53,8 @@
         \item K is strike price
         \item T is time to maturity
         \item N(x) is Cumulative Distribution Probability
-        \item Solutions to this partial differential equation are the Black-Scholes-Merton formulae, given by:
+        \item Solutions to this partial differential equation are the Black-Scholes-Merton formulae for European call and put options prices
     \end{itemize}
-    \[ 
-    c = S_0 N(d_1) - K
-    \exp(-r T) N(d_2)
-    \]
-    \[
-    p = K
-    \exp(-r T) N(-d_2) - S_0 N(-d_1)
         
 
 \end{frame}
@@ -70,10 +63,33 @@
 
 \begin{frame}{Boundary Conditions}
     \begin{itemize}
-        \item 
-        \item 
-        \item 
+        \item Key boundary conditions come from the payoff, given by: 
+    \end{itemize} 
+    \[
+    payoff = strike - spot S(t)
+    \]
+    \begin{itemize}
+        \item For a European call option: 
     \end{itemize}
+    \[
+    payoff = max[S(T)-K, 0]
+    \]
+    \begin{itemize}
+        \item This payoff boundary condition becomes:
+    \end{itemize}
+    \[
+    u(x,0) = max\left\{
+    \exp\(\tfrac{1}{2}(k+1)x\right)
+    -
+    \exp\(\tfrac{1}{2}(k-1)x\right),
+    0}
+    \]
+    \begin{itemize}
+        \item Where
+    \end{itemize}
+    \[
+    k = \frac{2 r}{\sigma^2}
+    \]
 \end{frame}
 
 \subsection{Transformation to the Heat Equations}
@@ -84,4 +100,22 @@
         \item 
         \item 
     \end{itemize}
+\end{frame}
+
+\subsection{Final Solution}
+
+\begin{frame}{Final Solution}
+    \begin{itemize}
+        \item 
+        \item 
+        \item 
+    \end{itemize}
+    \[ 
+    c = S_0 N(d_1) - K
+    \exp(-r T) N(d_2)
+    \]
+    \[
+    p = K
+    \exp(-r T) N(-d_2) - S_0 N(-d_1)
+    \]
 \end{frame}
