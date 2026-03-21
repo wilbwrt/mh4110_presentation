@@ -43,16 +43,16 @@
     = r c
     \]
     \begin{itemize}
-        \item t = time
-        \item c = call option price
-        \item p = put option price
-        \item S = spot stock price
-        \item r = risk free interest rate 
-        \item \sigma = stock volatility
-        \item S_0 is spot stock price at time zero
-        \item K is strike price
-        \item T is time to maturity
-        \item N(x) is Cumulative Distribution Probability
+        \item $\t$ = time
+        \item $\c$ = call option price
+        \item $\p$ = put option price
+        \item $\S$ = spot stock price
+        \item $\r$ = risk free interest rate 
+        \item $\sigma$ = stock volatility
+        \item $\S_0$ is spot stock price at time zero
+        \item $\K$ is strike price
+        \item $\T$ is time to maturity
+        \item $\N(x)$ is Cumulative Distribution Probability
         \item Solutions to this partial differential equation are the Black-Scholes-Merton formulae for European call and put options prices
     \end{itemize}
         
@@ -96,16 +96,57 @@
     \[
     \tau = \frac{1}{2} \sigma^2 (T - t)
     \]
+    \begin{itemize}
+        \item Take log of price as stock price follows geometric Brownian motion
+        \item Define rescale of time scaled by volatility
+    \end{itemize}
 \end{frame}
 
 \subsection{Transformation to the Heat Equations}
 
 \begin{frame}{Transformation to the Heat Equations}
     \begin{itemize}
-        \item 
-        \item 
-        \item 
+        \item Define mapping from $c(s,t)$ to $f(x,\tau)$ with strike price $\K$ as scale factor:
     \end{itemize}
+    \[
+    c(s,t) = K f(x,\tau)
+    \]
+    \begin{itemize}
+        \item Define another mapping where the exponential removes drift:
+    \end{itemize}
+    \[
+    f(x,\tau) = \exp(\alpha x + \beta \tau) u(x,\tau)
+    \]
+    \begin{itemize}
+        \item We then solve and choose $\alpha$ and $\beta$, where we find:
+    \end{itemize}
+    \[
+    \alpha = \frac{-1}{2} (k - 1)
+    \]
+    \[
+    \beta = \frac{-1}{4} (k + 1)^2
+    \]
+    \begin{itemize}
+        \item Which leads to a direct relationship between actual price of the option $c(s,t)$, and the modified price $u(x,\tau)$
+        \item Substituting $\alpha$ and $\beta$ we find this relationship is given by:
+    \end{itemize}
+    \[
+    c(s,t) = K u(x,\tau) \exp\left(\frac{-1}{2} (k - 1) x - \frac{1}{4} (k + 1)^2 \ tau\right)
+    \]
+    \begin{itemize}
+        \item This allows us to conclude that the Black-Scholes equations can be expressed as the heat equation, where $\x$ is generalised price of stock and $\tau$ is generalised unit of time:
+    \end{itemize}
+    \[
+    \frac{\partial u}{\partial \tau} 
+    =
+    \frac{\partial^2 u}{\partial x^2}
+    \]
+    \[
+    - \infty < x < \infty
+    \]
+    \[
+    \tau > 0
+    \]
 \end{frame}
 
 \subsection{Final Solution}
