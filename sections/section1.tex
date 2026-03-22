@@ -63,7 +63,7 @@
 
 \begin{frame}{Boundary Conditions}
     \begin{itemize}
-        \item Key boundary conditions come from the payoff, given by: 
+        \item Boundary conditions come from the payoff, given by: 
     \end{itemize} 
     \[
     payoff = strike - spot S(t)
@@ -72,8 +72,11 @@
         \item For a European call option: 
     \end{itemize}
     \[
-    payoff = max[S(T)-K, 0]
+    payoff = max{S(T)-K, 0}
     \]
+    \begin{itemize}
+        \item So we have the lower bound of zero for $S = 0$, and the upper bound of $S$ as $S \to \infty$
+    \end{itemize}
     \begin{itemize}
         \item This payoff boundary condition becomes:
     \end{itemize}
@@ -98,7 +101,7 @@
     \]
     \begin{itemize}
         \item Take log of price as stock price follows geometric Brownian motion
-        \item Define rescale of time scaled by volatility
+        \item Define rescale of time as time scaled by volatility
     \end{itemize}
 \end{frame}
 
