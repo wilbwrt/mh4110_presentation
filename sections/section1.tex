@@ -69,7 +69,7 @@
     payoff = strike - spot S(t)
     \]
     \begin{itemize}
-        \item For a European call option: 
+        \item For a European call option, we have the terminal condition: 
     \end{itemize}
     \[
     payoff = max{S(T)-K, 0}
@@ -77,37 +77,24 @@
     \begin{itemize}
         \item So we have the lower bound of zero for $S = 0$, and the upper bound of $S$ as $S \to \infty$
     \end{itemize}
+\end{frame}
+
+\subsection{Transformation to the Heat Equations}
+
+\begin{frame}{Transformation to the Heat Equations}
     \begin{itemize}
-        \item This payoff boundary condition becomes:
-    \end{itemize}
-    \[
-    u(x,0) = max\left\{
-    \exp\(\tfrac{1}{2}(k + 1) x\right)
-    -
-    \exp\(\tfrac{1}{2}(k - 1) x\right),
-    0}
-    \]
-    \begin{itemize}
-        \item Where
-    \end{itemize}
-    \[
-    k = \frac{2 r}{\sigma^2}
-    \]
+        \item Firstly, we define:
     \[
     x = \ln\left(\frac{S(t)}{c(t)}\right)
     \]
     \[
     \tau = \frac{1}{2} \sigma^2 (T - t)
     \]
+    \end{itemize}
     \begin{itemize}
         \item Take log of price as stock price follows geometric Brownian motion
         \item Define rescale of time as time scaled by volatility
     \end{itemize}
-\end{frame}
-
-\subsection{Transformation to the Heat Equations}
-
-\begin{frame}{Transformation to the Heat Equations}
     \begin{itemize}
         \item Define mapping from $c(s,t)$ to $f(x,\tau)$ with strike price $\K$ as scale factor:
     \end{itemize}
@@ -126,6 +113,9 @@
     -
     k f
     \]
+    \begin{itemize}
+        \item Where $k = \frac{2 r}{\sigma^2}$
+    \end{itemize}
     \begin{itemize}
         \item We see this is a PDE with similar form to the heat equation, but with extra terms $(k - 1) \frac{\partial f}{\partial x}$ and $- k f$
         \item To make the extra terms disappear, we define a new mapping, where the exponential removes drift:
@@ -162,6 +152,16 @@
     \]
     \[
     \tau > 0
+    \]
+    \begin{itemize}
+        \item Where we have the payoff boundary condition:
+    \end{itemize}
+    \[
+    u(x,0) = max\left\{
+    \exp\(\tfrac{1}{2}(k + 1) x\right)
+    -
+    \exp\(\tfrac{1}{2}(k - 1) x\right),
+    0}
     \]
 \end{frame}
 
