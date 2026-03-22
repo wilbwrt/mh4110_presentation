@@ -134,7 +134,7 @@
     c(s,t) = K u(x,\tau) \exp\left(\frac{-1}{2} (k - 1) x - \frac{1}{4} (k + 1)^2 \ tau\right)
     \]
     \begin{itemize}
-        \item This allows us to conclude that the Black-Scholes equations can be expressed as the heat equation, where $\x$ is generalised price of stock and $\tau$ is generalised unit of time:
+        \item This allows us to conclude that the Black-Scholes equations can be expressed as the heat equation, where $\x$ is price of stock after transformations, $\tau$ is unit of time after transformations, and $u$ is the price of the option after transformations:
     \end{itemize}
     \[
     \frac{\partial u}{\partial \tau} 
@@ -153,9 +153,7 @@
 
 \begin{frame}{Final Solution}
     \begin{itemize}
-        \item 
-        \item 
-        \item 
+        \item We can then obtain the solutions to the Black-Scholes equation, where we have the price for European call and put options:
     \end{itemize}
     \[ 
     c = S_0 N(d_1) - K
@@ -164,5 +162,13 @@
     \[
     p = K
     \exp(-r T) N(-d_2) - S_0 N(-d_1)
+    \]
+    \[
+    d_1 = \frac{\ln\left(\frac{S_0}{K}\right) + \left(r + \frac{\simga^2}{2}\right) (T - t)}{\sigma\sqrt{T - t}}
+    \]
+    \[
+    d_2 = \frac{\ln\left(\frac{S_0}{K}\right) + \left(r - \frac{\sigma^2}{2}\right) (T - t)}{\sigma\sqrt{T - t}}
+    =
+    d_1 - \sigma\sqrt{T - t}
     \]
 \end{frame}
