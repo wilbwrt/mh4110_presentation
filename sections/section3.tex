@@ -1,20 +1,67 @@
 \section{Experimentation and Results}
 
-\subsection{Subsection 1}
-
-\begin{frame}{Frame Title}
-    \begin{itemize}[<+-| alert@+>] % Besides alert, use \pause also works
-        \item This is not an official NTU \LaTeX{} Beamer template. 
-        \item Code is available at: \url{https://github.com/l0rem1psum/ntu-beamer-template}, all issues and pull requests are welcome.
-    \end{itemize}
+\begin{frame}{Neural Network Architecture}
+\begin{itemize}
+    \item \textbf{Structure:} 2-32-32-1
+    \begin{itemize}
+        \item 2 inputs
+        \item 2 hidden layers with 32 neurons each
+        \item 1 output (option price)
+    \end{itemize} \pause
+    
+    \item \textbf{Activation Function:} Hyperbolic Tangent \pause
+    
+    \item \textbf{Training Algorithm:} Adam optimizer \pause
+    
+    \item \textbf{Training Duration:} 30,000 epochs
+\end{itemize}
 \end{frame}
 
-\subsection{Subsection 2}
+% =========================
+\begin{frame}{Computational Framework}
+\begin{itemize}
+    \item Implemented in \textbf{Python 3} \pause
+    
+    \item Built using the \textbf{Torch framework} \pause
+    
+    \item Utilized the \textbf{Neurodiffeq} library \pause
+    
+    \item Purpose: Solve differential equations using neural networks
+\end{itemize}
+\end{frame}
 
-\begin{frame}{Frame Title}
+% =========================
+\begin{frame}{Mathematical Methodology}
+\begin{itemize}
+    \item Transformed the \textbf{Black-Scholes equation} into the heat equation \pause
+    
+    \item Change of variables:
     \begin{itemize}
-        \item This template is modified from Tsinghua University's Beamer template: \url{https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb} \pause
-        \item The original template is modified from \newline \url{https://www.latexstudio.net/archives/4051.html}
-        \item The real original template is not found \cite{origin}.
-    \end{itemize}
+        \item Generalized price: $x$
+        \item Generalized time: $\tau$
+    \end{itemize} \pause
+    
+    \item Applied real market payoff data as boundary conditions
+\end{itemize}
+\end{frame}
+
+% =========================
+\begin{frame}{Evaluation Metrics}
+To evaluate model performance:
+\begin{itemize}
+    \item \textbf{MAE} -- Mean Absolute Error \pause
+    \item \textbf{MSE} -- Mean Square Error \pause
+    \item \textbf{MAPE} -- Mean Absolute Percentage Error \pause
+    \item \textbf{POCID} -- Prediction of Change in Direction \pause
+    \item \textbf{ARV} -- Average Relative Variance
+\end{itemize}
+\end{frame}
+
+% =========================
+\begin{frame}{Conclusion}
+\begin{itemize}
+    \item Neural networks can approximate option pricing \pause
+    \item Performance evaluated using multiple statistical metrics \pause
+    \item Combines finance, PDEs, and deep learning
+\end{itemize}
 \end{frame}
