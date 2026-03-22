@@ -112,13 +112,26 @@
     c(s,t) = K f(x,\tau)
     \]
     \begin{itemize}
-        \item Define another mapping where the exponential removes drift:
+        \item The change of variables and mappings so far allow us to write the original PDE in another form:
+    \end{itemize}
+    \[
+    \frac{\partial f}{\partial \tau} 
+    =
+    \frac{\partial^2 f}{\partial x^2}
+    +
+    (k - 1) \frac{\partial f}{\partial x}
+    -
+    k f
+    \]
+    \begin{itemize}
+        \item We see this is a PDE with similar form to the heat equation, but with extra terms $(k - 1) \frac{\partial f}{\partial x}$ and $- k f$
+        \item To make the extra terms disappear, we define a new mapping, where the exponential removes drift:
     \end{itemize}
     \[
     f(x,\tau) = \exp(\alpha x + \beta \tau) u(x,\tau)
     \]
     \begin{itemize}
-        \item We then solve and choose $\alpha$ and $\beta$, where we find:
+        \item We then solve and choose $\alpha$ and $\beta$ such that the extra terms are removed, so we find:
     \end{itemize}
     \[
     \alpha = \frac{-1}{2} (k - 1)
