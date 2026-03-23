@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  23 MAR 2026 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  23 MAR 2026 23:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1094,7 +1094,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 \@quotelevel=\count548
 \@quotereset=\count549
-No file main.aux.
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -1115,6 +1115,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
 LaTeX Font Info:    ... okay on input line 42.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
 LaTeX Font Info:    ... okay on input line 42.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1973,281 +1974,109 @@ No file main.toc.
 ] [51
 
 ]
+<images/Table1.png, id=5941, 572.1375pt x 358.33875pt>
+File: images/Table1.png Graphic file (type png)
+<use images/Table1.png>
+Package pdftex.def Info: images/Table1.png  used on input line 113.
+(pdftex.def)             Requested size: 239.00558pt x 149.69202pt.
+ [52
 
-LaTeX Warning: File `imageTable1.png' not found on input line 113.
-
-
-./sections/section3.tex:113: Package pdftex.def Error: File `imageTable1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (44.51138pt too high) detected at line 113
- []
-
-[52
+ <./images/Table1.png>]
+File: images/Table1.png Graphic file (type png)
+<use images/Table1.png>
+Package pdftex.def Info: images/Table1.png  used on input line 113.
+(pdftex.def)             Requested size: 239.00558pt x 149.69202pt.
+ [53
 
 ]
-
-LaTeX Warning: File `imageTable1.png' not found on input line 113.
-
-
-./sections/section3.tex:113: Package pdftex.def Error: File `imageTable1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (44.51138pt too high) detected at line 113
- []
-
-[53
+File: images/Table1.png Graphic file (type png)
+<use images/Table1.png>
+Package pdftex.def Info: images/Table1.png  used on input line 120.
+(pdftex.def)             Requested size: 239.00558pt x 149.69202pt.
+ [54
 
 ]
-
-LaTeX Warning: File `Table1.png' not found on input line 120.
-
-
-./sections/section3.tex:120: Package pdftex.def Error: File `Table1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.120 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (44.51138pt too high) detected at line 120
- []
-
-[54
+File: images/Table1.png Graphic file (type png)
+<use images/Table1.png>
+Package pdftex.def Info: images/Table1.png  used on input line 120.
+(pdftex.def)             Requested size: 239.00558pt x 149.69202pt.
+ [55
 
 ]
+<images/Figure11.png, id=6371, 485.56406pt x 371.13657pt>
+File: images/Figure11.png Graphic file (type png)
+<use images/Figure11.png>
+Package pdftex.def Info: images/Figure11.png  used on input line 128.
+(pdftex.def)             Requested size: 239.00558pt x 182.67964pt.
+<images/Figure12.png, id=6372, 402.00188pt x 143.03438pt>
+File: images/Figure12.png Graphic file (type png)
+<use images/Figure12.png>
+Package pdftex.def Info: images/Figure12.png  used on input line 128.
+(pdftex.def)             Requested size: 239.00558pt x 85.03775pt.
 
-LaTeX Warning: File `Table1.png' not found on input line 120.
-
-
-./sections/section3.tex:120: Package pdftex.def Error: File `Table1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.120 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (44.51138pt too high) detected at line 120
- []
-
-[55
-
-]
-
-LaTeX Warning: File `Figure11.png' not found on input line 128.
-
-
-./sections/section3.tex:128: Package pdftex.def Error: File `Figure11.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `Figure12.png' not found on input line 128.
-
-
-./sections/section3.tex:128: Package pdftex.def Error: File `Figure12.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (284.53078pt too high) detected at line 128
+Overfull \vbox (74.20938pt too high) detected at line 128
  []
 
 [56
 
-]
+ <./images/Figure11.png> <./images/Figure12.png>]
+File: images/Figure11.png Graphic file (type png)
+<use images/Figure11.png>
+Package pdftex.def Info: images/Figure11.png  used on input line 128.
+(pdftex.def)             Requested size: 239.00558pt x 182.67964pt.
+File: images/Figure12.png Graphic file (type png)
+<use images/Figure12.png>
+Package pdftex.def Info: images/Figure12.png  used on input line 128.
+(pdftex.def)             Requested size: 239.00558pt x 85.03775pt.
 
-LaTeX Warning: File `Figure11.png' not found on input line 128.
-
-
-./sections/section3.tex:128: Package pdftex.def Error: File `Figure11.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `Figure12.png' not found on input line 128.
-
-
-./sections/section3.tex:128: Package pdftex.def Error: File `Figure12.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (284.53078pt too high) detected at line 128
+Overfull \vbox (74.20938pt too high) detected at line 128
  []
 
 [57
 
 ]
+<images/Table2.png, id=6587, 472.76625pt x 298.11375pt>
+File: images/Table2.png Graphic file (type png)
+<use images/Table2.png>
+Package pdftex.def Info: images/Table2.png  used on input line 135.
+(pdftex.def)             Requested size: 239.00558pt x 150.71228pt.
+ [58
 
-LaTeX Warning: File `Table1.png' not found on input line 135.
-
-
-./sections/section3.tex:135: Package pdftex.def Error: File `Table1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.135 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (44.51138pt too high) detected at line 135
- []
-
-[58
+ <./images/Table2.png>]
+File: images/Table2.png Graphic file (type png)
+<use images/Table2.png>
+Package pdftex.def Info: images/Table2.png  used on input line 135.
+(pdftex.def)             Requested size: 239.00558pt x 150.71228pt.
+ [59
 
 ]
+<images/Figure21.png, id=6802, 475.7775pt x 365.11406pt>
+File: images/Figure21.png Graphic file (type png)
+<use images/Figure21.png>
+Package pdftex.def Info: images/Figure21.png  used on input line 143.
+(pdftex.def)             Requested size: 239.00558pt x 183.41454pt.
+<images/Figure22.png, id=6803, 405.01312pt x 137.7647pt>
+File: images/Figure22.png Graphic file (type png)
+<use images/Figure22.png>
+Package pdftex.def Info: images/Figure22.png  used on input line 143.
+(pdftex.def)             Requested size: 239.00558pt x 81.29936pt.
 
-LaTeX Warning: File `Table1.png' not found on input line 135.
-
-
-./sections/section3.tex:135: Package pdftex.def Error: File `Table1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.135 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (44.51138pt too high) detected at line 135
- []
-
-[59
-
-]
-
-LaTeX Warning: File `Figure21.png' not found on input line 143.
-
-
-./sections/section3.tex:143: Package pdftex.def Error: File `Figure21.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.143 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `Figure22.png' not found on input line 143.
-
-
-./sections/section3.tex:143: Package pdftex.def Error: File `Figure22.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.143 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (284.53078pt too high) detected at line 143
+Overfull \vbox (71.20589pt too high) detected at line 143
  []
 
 [60
 
-]
+ <./images/Figure21.png> <./images/Figure22.png>]
+File: images/Figure21.png Graphic file (type png)
+<use images/Figure21.png>
+Package pdftex.def Info: images/Figure21.png  used on input line 143.
+(pdftex.def)             Requested size: 239.00558pt x 183.41454pt.
+File: images/Figure22.png Graphic file (type png)
+<use images/Figure22.png>
+Package pdftex.def Info: images/Figure22.png  used on input line 143.
+(pdftex.def)             Requested size: 239.00558pt x 81.29936pt.
 
-LaTeX Warning: File `Figure21.png' not found on input line 143.
-
-
-./sections/section3.tex:143: Package pdftex.def Error: File `Figure21.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.143 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `Figure22.png' not found on input line 143.
-
-
-./sections/section3.tex:143: Package pdftex.def Error: File `Figure22.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.143 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (284.53078pt too high) detected at line 143
+Overfull \vbox (71.20589pt too high) detected at line 143
  []
 
 [61
@@ -2369,18 +2198,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### semi simple group (level 1) entered at line 84 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 37969 strings out of 467533
- 736870 string characters out of 5423669
- 1624021 words of memory out of 5000000
- 65969 multiletter control sequences out of 15000+600000
- 665520 words of font info for 144 fonts, out of 8000000 for 9000
+ 37831 strings out of 467533
+ 733919 string characters out of 5423669
+ 1624012 words of memory out of 5000000
+ 65830 multiletter control sequences out of 15000+600000
+ 665206 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,838b,1319s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on main.pdf (86 pages, 907400 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
+Output written on main.pdf (86 pages, 1189634 bytes).
 PDF statistics:
- 9902 PDF objects out of 10688 (max. 8388607)
- 6872 compressed objects within 69 object streams
+ 9910 PDF objects out of 10688 (max. 8388607)
+ 6870 compressed objects within 69 object streams
  188 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 
