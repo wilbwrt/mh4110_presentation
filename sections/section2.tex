@@ -1,15 +1,9 @@
-\definecolor{nnblue}{RGB}{31, 78, 121}
-\definecolor{nnaccent}{RGB}{0, 112, 192}
-\definecolor{nngray}{RGB}{89, 89, 89}
+\definecolor{nngray}{RGB}{100, 100, 100}
 \definecolor{nngreen}{RGB}{0, 128, 0}
-\definecolor{nnred}{RGB}{192, 0, 0}
-\definecolor{lightyellow}{RGB}{255, 252, 220}
-\definecolor{lightblue}{RGB}{220, 235, 252}
-\setbeamercolor{block title}{bg=nnblue, fg=white}
-\setbeamercolor{block body}{bg=lightblue}
-\setbeamercolor{alertblock title}{bg=nnred, fg=white}
-\setbeamercolor{exampleblock title}{bg=nngreen, fg=white}
-\setbeamercolor{exampleblock body}{bg=green!8}
+\setbeamercolor{block title alerted}{bg=ntu-blue, fg=white}
+\setbeamercolor{block body alerted}{bg=ntu-blue!8}
+\setbeamercolor{block title example}{bg=ntu-blue, fg=white}
+\setbeamercolor{block body example}{bg=ntu-blue!8}
 
 \section{Neural Network Learning}
 %% ==========================================================
@@ -18,10 +12,12 @@
 \begin{frame}{The Analytical Solution and Its Limits}
   \begin{columns}[T]
     \begin{column}{0.52\textwidth}
-      \textbf{The Black-Scholes-Merton formula} \citep{black1973} gives a closed-form option price:
-      \vspace{0.3em}
-      \[c = S_0 N(d_1) - K e^{-rT} N(d_2)\]
-      \vspace{0.3em}
+      \textbf{The Black-Scholes-Merton formula} \cite{black1973} gives a closed-form option price:
+      \vspace{0.15em}
+      \[
+        c = S_0 N(d_1) - K e^{-rT} N(d_2)
+      \]
+      \vspace{0.05em}
       \textbf{Assumptions required:}
       \begin{itemize}
         \item Constant volatility $\sigma$
@@ -32,12 +28,12 @@
     \end{column}
     \begin{column}{0.44\textwidth}
       \begin{alertblock}{Market Reality}
-        For dates \textbf{far from maturity}, the analytical solution tracks the \emph{stock price}, not the \emph{option price}.\\[0.5em]
+        \small For dates \textbf{far from maturity}, the analytical solution tracks the \emph{stock price}, not the \emph{option price}.\\[0.15em]
         It only converges to market prices near expiration.
       \end{alertblock}
-      \vspace{0.5em}
-      \begin{exampleblock}{Key Claim \citep{santos2024}}
-        The issue is not the PDE itself. The real-world divergence comes from the \textbf{analytical solution} applied in practice.
+      \vspace{0.2em}
+      \begin{exampleblock}{Key Claim \cite{santos2024}}
+        \small The issue is not the PDE itself. The real-world divergence comes from the \textbf{analytical solution} applied in practice.
       \end{exampleblock}
     \end{column}
   \end{columns}
@@ -46,31 +42,31 @@
 \begin{frame}{PDE-Constrained Learning: The Core Idea}
   \begin{center}
   \begin{tikzpicture}[
-    box/.style={draw, rounded corners, minimum width=3.2cm, minimum height=1cm,
+    box/.style={draw, rounded corners, minimum width=3.2cm, minimum height=0.9cm,
                 align=center, font=\small},
     arrow/.style={-Stealth, thick}
   ]
-    \node[box, fill=blue!15]   (pde)      {Black-Scholes PDE\\(heat equation form)};
+    \node[box, fill=ntu-blue!12]  (pde)      {Black-Scholes PDE\\(heat equation form)};
     \node[box, fill=orange!20, right=2.2cm of pde] (analytic) {Analytical\\B-S-M Formula};
-    \node[box, fill=green!20,  below=1.6cm of pde] (nn)       {Neural Network\\Solver};
-    \node[box, fill=red!15,    right=2.2cm of nn]  (market)   {Real Market\\Boundary Data};
+    \node[box, fill=green!15,  below=1.3cm of pde] (nn)       {Neural Network\\Solver};
+    \node[box, fill=ntu-red!10, right=2.2cm of nn] (market)   {Real Market\\Boundary Data};
 
     \draw[arrow]         (pde)    -- node[above, font=\footnotesize]{standard route} (analytic);
     \draw[arrow, dashed] (pde)    -- node[left,  font=\footnotesize]{this paper}     (nn);
     \draw[arrow]         (market) -- node[below, font=\footnotesize]{boundary conditions} (nn);
 
-    \node[draw=nnred,   dashed, thick, rounded corners,
+    \node[draw=ntu-red, dashed, thick, rounded corners,
           fit=(analytic), inner sep=8pt,
-          label={[font=\footnotesize, text=nnred]above:deviates far from maturity}] {};
+          label={[font=\footnotesize, text=ntu-red]above:deviates far from maturity}] {};
     \node[draw=nngreen, dashed, thick, rounded corners,
           fit=(nn)(market), inner sep=8pt,
           label={[font=\footnotesize, text=nngreen]below:data-constrained solution}] {};
   \end{tikzpicture}
   \end{center}
 
-  \vspace{0.2em}
+  \vspace{0.0em}
   \begin{block}{This is not regression}
-    The network does not curve-fit option prices directly. It must learn a function that \textbf{satisfies the PDE} as a mathematical constraint while matching real market boundary data.
+    \small The network does not curve-fit option prices directly. It must learn a function that \textbf{satisfies the PDE} as a constraint while matching real market boundary data.
   \end{block}
 \end{frame}
 %% ==========================================================
@@ -96,7 +92,7 @@
     \end{column}
     \begin{column}{0.46\textwidth}
       \begin{block}{Physics-Informed Neural Networks}
-        This is the core of \textbf{PINNs}, first proposed by \citet{lagaris1998} and extended by \citet{raissi2019}.\\[0.4em]
+        This is the core of \textbf{PINNs}, first proposed by \textcite{lagaris1998} and extended by \textcite{raissi2019}.\\[0.4em]
         The PDE residual acts as a \textbf{physics-based regularizer} constraining the solution space.
       \end{block}
       \vspace{0.3em}
@@ -107,39 +103,35 @@
 \end{frame}
 %% ----------------------------------------------------------
 \begin{frame}{(B) Enforcing Boundary Conditions}
-
   \textbf{Problem:} Minimizing the residual alone does not guarantee the network satisfies the initial condition (option payoff at expiration).
 
-  \vspace{0.5em}
-  \textbf{Solution: modified trial function \citep{lagaris1998, chen2020}:}
+  \vspace{0.4em}
+  \textbf{Solution: modified trial function \cite{lagaris1998, chen2020}:}
   \[
     \tilde{u}(x, \tau) = \underbrace{u_{\tau_0}(x)}_{\text{known payoff}} +
     \underbrace{\left[1 - e^{-(\tau - \tau_0)}\right]}_{\substack{\text{= 0 at } \tau = \tau_0 \\ \to 1 \text{ as } \tau \text{ grows}}} \cdot \hat{u}(x, \tau)
   \]
-
+  \vspace{-20pt}
   \begin{columns}[T]
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.4\textwidth}
       \begin{exampleblock}{Effect}
         At $\tau = \tau_0$:\quad $\tilde{u} = u_{\tau_0}(x)$ \textbf{exactly}\\[0.3em]
         As $\tau$ grows:\quad $\tilde{u} \approx \hat{u}(x,\tau)$
       \end{exampleblock}
     \end{column}
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.6\textwidth}
       \begin{alertblock}{Why not a penalty term?}
-        Penalty-based enforcement creates competing gradients. The modified trial function bakes the constraint into the architecture: satisfied \emph{analytically}, not approximately.
+        \small Penalty-based enforcement creates competing gradients. The modified trial function bakes the constraint into the architecture: satisfied \emph{analytically}, not approximately.
       \end{alertblock}
     \end{column}
   \end{columns}
 
-  \vspace{0.4em}
+  \vspace{0.2em}
   \footnotesize
-  General form: $\tilde{u}(x,\tau) = A(x,\tau;\,x_\text{bdy},\tau_0)\,\hat{u}(x,\tau)$, where $A$ encodes all boundary constraints. Implemented via \textbf{NeuroDiffEq} \citep{chen2020}.
-
+  General form: $\tilde{u}(x,\tau) = A(x,\tau;\,x_\text{bdy},\tau_0)\,\hat{u}(x,\tau)$, where $A$ encodes all boundary constraints. Implemented via \textbf{NeuroDiffEq} \cite{chen2020}.
 \end{frame}
-
 %% ----------------------------------------------------------
 \begin{frame}{(C) Network Architecture: Structure}
-
   \begin{center}
   \begin{tikzpicture}[
     neuron/.style={circle, draw, minimum size=0.72cm, inner sep=0pt, font=\small},
@@ -148,24 +140,24 @@
   ]
     %% Input layer
     \node[neuron, fill=orange!30] (i1) at (0, -0.5)  {$x$};
-    \node[neuron, fill=orange!30] (i2) at (0, -2.2)  {$\tau$};
+    \node[neuron, fill=orange!30] (i2) at (0, -2.0)  {$\tau$};
 
     %% Hidden 1 (5 shown, 32 implied)
     \foreach \i in {1,...,5} {
-      \node[neuron, fill=blue!20] (h1\i) at (2.8, {0.4 - \i*0.72}) {};
+      \node[neuron, fill=ntu-blue!25] (h1\i) at (2.8, {0.3 - \i*0.65}) {};
     }
-    \node[font=\small, blue!70]        at (2.8, -4.05) {$\vdots$};
-    \node[font=\footnotesize, blue!80] at (2.8, -4.6)  {32 neurons};
+    \node[font=\small,  text=ntu-blue]         at (2.8, -3.8) {$\vdots$};
+    \node[font=\footnotesize, text=ntu-blue]   at (2.8, -4.3)  {32 neurons};
 
     %% Hidden 2
     \foreach \i in {1,...,5} {
-      \node[neuron, fill=blue!20] (h2\i) at (5.6, {0.4 - \i*0.72}) {};
+      \node[neuron, fill=ntu-blue!25] (h2\i) at (5.6, {0.3 - \i*0.65}) {};
     }
-    \node[font=\small, blue!70]        at (5.6, -4.05) {$\vdots$};
-    \node[font=\footnotesize, blue!80] at (5.6, -4.6)  {32 neurons};
+    \node[font=\small,  text=ntu-blue]         at (5.6, -3.8) {$\vdots$};
+    \node[font=\footnotesize, text=ntu-blue]   at (5.6, -4.3)  {32 neurons};
 
     %% Output
-    \node[neuron, fill=green!30] (o1) at (8.4, -1.35) {$u$};
+    \node[neuron, fill=ntu-red!30] (o1) at (8.4, -1.25) {$u$};
 
     %% Edges input -> h1
     \foreach \src in {1,2} {
@@ -185,10 +177,10 @@
     }
 
     %% Layer labels above
-    \node[layer] at (0,   0.85) {Input\\(2)};
-    \node[layer] at (2.8, 0.85) {Hidden 1\\(32)};
-    \node[layer] at (5.6, 0.85) {Hidden 2\\(32)};
-    \node[layer] at (8.4, 0.85) {Output\\(1)};
+    \node[layer] at (0,   0.75) {Input\\(2)};
+    \node[layer] at (2.8, 0.75) {Hidden 1\\(32)};
+    \node[layer] at (5.6, 0.75) {Hidden 2\\(32)};
+    \node[layer] at (8.4, 0.75) {Output\\(1)};
 
     \node[right=0.18cm of o1, font=\small] {$= u(x,\tau)$};
 
@@ -197,14 +189,11 @@
 
   \vspace{0.1em}
   \centering\footnotesize
-  MLP with architecture $2 \to 32 \to 32 \to 1$ \citep{santos2024}.
+  MLP with architecture $2 \to 32 \to 32 \to 1$ \cite{santos2024}. \\
   Inputs are transformed coordinates $(x,\tau)$; output is the generalised option price.
-
 \end{frame}
-
 %% ----------------------------------------------------------
 \begin{frame}{(C) Network Architecture: Training Details}
-
   \begin{columns}[T]
     \begin{column}{0.50\textwidth}
       \renewcommand{\arraystretch}{1.3}
@@ -217,40 +206,34 @@
         Input $x$       & $\ln(S/c)$, scaled by $K$ \\
         Input $\tau$    & $\tfrac{1}{2}\sigma^2(T-t)$ \\
         Activation      & $\tanh$ \\
-        Optimizer       & Adam \citep{kingma2015} \\
+        Optimizer       & Adam \cite{kingma2015} \\
         Epochs          & 30{,}000 \\
-        Framework       & PyTorch \citep{paszke2019} \\
-        Library         & NeuroDiffEq \citep{chen2020} \\
+        Framework       & PyTorch \cite{paszke2019} \\
+        Library         & NeuroDiffEq \cite{chen2020} \\
         \bottomrule
       \end{tabular}
     \end{column}
     \begin{column}{0.47\textwidth}
-      \begin{block}{Why tanh? \citep{lagaris1998, goodfellow2016}}
+      \vspace{-20pt}
+      \begin{block}{Why tanh? \cite{lagaris1998, goodfellow2016}}
         \small Smooth and differentiable everywhere. Computing the PDE residual requires differentiating the network output w.r.t.\ inputs, so the activation must be differentiable across the whole domain.
       \end{block}
       \vspace{0.35em}
-      \begin{block}{Why Adam? \citep{kingma2015}}
+      \begin{block}{Why Adam? \cite{kingma2015}}
         \small Adapts the learning rate per parameter using gradient moment estimates. Converges faster than vanilla SGD, especially when gradient scales vary across the network.
       \end{block}
     \end{column}
   \end{columns}
-
 \end{frame}
-
 %% ----------------------------------------------------------
 \begin{frame}{Coordinate Transformation: Connecting $u$ to Real Prices}
-
-  The network operates in transformed coordinates \citep{santos2024}. Recovering the real option price requires two substitutions:
+  The network operates in transformed coordinates \cite{santos2024}. Recovering the real option price requires two substitutions:
 
   \vspace{0.3em}
   \begin{block}{Variable Substitutions (Black-Scholes $\to$ Heat Equation)}
-    \[
-      x = \ln\!\left(\frac{S(t)}{c(t)}\right), \qquad
-      \tau = \tfrac{1}{2}\sigma^2 (T - t)
-    \]
-    \[
-      c(S,t) = K\,\hat{u}(x,\tau)\,\exp\!\left(-\tfrac{1}{2}(k-1)x - \tfrac{1}{4}(k+1)^2\tau\right), \quad k = \frac{2r}{\sigma^2}
-    \]
+    \vspace{-10pt}
+    \[x = \ln\!\left(\frac{S(t)}{c(t)}\right), \qquad \tau = \tfrac{1}{2}\sigma^2 (T - t)\]
+    \[c(S,t) = K\,\hat{u}(x,\tau)\,\exp\!\left(-\tfrac{1}{2}(k-1)x - \tfrac{1}{4}(k+1)^2\tau\right), \quad k = \frac{2r}{\sigma^2}\]
   \end{block}
 
   \vspace{0.3em}
@@ -270,5 +253,4 @@
       \end{itemize}
     \end{column}
   \end{columns}
-
 \end{frame}

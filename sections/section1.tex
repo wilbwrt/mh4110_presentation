@@ -3,12 +3,12 @@
 \subsection{What is an Option?}
 
 \begin{frame}{What is an Option?}
-    \begin{itemize}[<+-| alert@+>] % Besides alert, use \pause also works
-        \item Derivatives are financial contracts which derive their value from an underlying asset 
+    \begin{itemize}
+        \item Derivatives are financial contracts which derive their value from an underlying asset
         \item Futures, Forwards, Swaps, Options
         \item Options:
         \begin{itemize}
-            \item Gives the right, not the obligation, to buy/sell asset at specified price on specified date 
+            \item Gives the right, not the obligation, to buy/sell asset at specified price on specified date
             \item Call gives right to buy
             \item Put gives right to sell
             \item American style can be utilised at any time up until expiration date
@@ -17,11 +17,11 @@
     \end{itemize}
 \end{frame}
 
-\subsection{Black-Scholes Background}
+\subsection{Black-Scholes Equation}
 
 \begin{frame}{Black-Scholes Background}
     \begin{itemize}
-        \item Developed in 1970s by Fischer Black, Myron Scholes, and Robert Merton 
+        \item Developed in 1970s by Fischer Black, Myron Scholes, and Robert Merton
         \item Provides an analytic solution to a second order parabolic partial differential equation by a transformation to the heat equation
         \item Leads to conclusion that options pricing dynamic is similar to heat dissipation
         \item Based on European style options
@@ -29,174 +29,81 @@
     \end{itemize}
 \end{frame}
 
-\subsection{Black-Scholes Equation}
-
 \begin{frame}{Black-Scholes Equation}
-    \begin{itemize}
-        \item Second order parabolic partial differential equation
-        \item For a stock which does not pay dividends, we have: 
-    \end{itemize}
-    \[
-    \frac{\partial c}{partial t}
-    + r S \frac{\partial c}{\partial S}
-    + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 c}{\partial^2 S}
-    = r c
-    \]
-    \begin{itemize}
-        \item $\t$ = time
-        \item $\c$ = call option price
-        \item $\p$ = put option price
-        \item $\S$ = spot stock price
-        \item $\r$ = risk free interest rate 
-        \item $\sigma$ = stock volatility
-        \item $\S_0$ is spot stock price at time zero
-        \item $\K$ is strike price
-        \item $\T$ is time to maturity
-        \item $\N(x)$ is Cumulative Distribution Probability
-        \item Solutions to this PDE are the formulas for European call and put options prices
-    \end{itemize}
-        
-
+    The Black-Scholes equation is a second-order parabolic PDE. For a stock which does not pay dividends, we have:
+    \[\frac{\partial c}{\partial t} + r S \frac{\partial c}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 c}{\partial S^2} = rc\]
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item $t$ = time
+                \item $c$ = call option price
+                \item $p$ = put option price
+                \item $S$ = spot stock price
+                \item $r$ = risk free interest rate
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item $\sigma$ = stock volatility
+                \item $S_0$ = spot stock price at time zero
+                \item $K$ = strike price
+                \item $T$ = time to maturity
+                \item $N(x)$ = Cumulative Distribution Probability
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    Solutions to this PDE are the formulas for European call and put options prices.
 \end{frame}
-
-\subsection{Boundary Conditions}
 
 \begin{frame}{Boundary Conditions}
     \begin{itemize}
-        \item Boundary conditions come from the payoff, given by: 
-    \end{itemize} 
-    \[
-    payoff = strike - spot S(t)
-    \]
-    \begin{itemize}
-        \item For a European call option, we have the terminal condition: 
-    \end{itemize}
-    \[
-    payoff = max{S(T) - K, 0}
-    \]
-    \begin{itemize}
+        \item Boundary conditions come from the payoff, given by:
+        \[\text{payoff} = \text{strike} - \text{spot } S_t\]
+        \item For a European call option, we have the terminal condition:
+        \[\text{payoff} = \max\left\{S_T - K,\, 0\right\}\]
         \item So we have the lower bound of zero for $S = 0$, and the upper bound of $S$ as $S \to \infty$
     \end{itemize}
 \end{frame}
 
-\subsection{Transformation to the Heat Equations}
+\subsection{Transformation to the Heat Equation}
 
-\begin{frame}{Transformation to the Heat Equations}
-    \begin{itemize}
-        \item Firstly, we define:
-    \[
-    x = \ln\left(\frac{S(t)}{c(t)}\right)
-    \]
-    \[
-    \tau = \frac{1}{2} \sigma^2 (T - t)
-    \]
-    \end{itemize}
-    \begin{itemize}
-        \item Take log of price as stock price follows geometric Brownian motion
-        \item Define rescale of time as time scaled by volatility
-    \end{itemize}
-    \begin{itemize}
-        \item Define mapping from $c(s,t)$ to $f(x,\tau)$ with strike price $\K$ as scale factor:
-    \end{itemize}
-    \[
-    c(s,t) = K f(x,\tau)
-    \]
-    \begin{itemize}
-        \item Substituting in the change of variables and mappings so far allows us to find the PDE:
-    \end{itemize}
-    \[
-    \frac{\partial f}{\partial \tau} 
-    =
-    \frac{\partial^2 f}{\partial x^2}
-    +
-    (\frac{2 r}{\sigma^2} - 1) \frac{\partial f}{\partial x}
-    -
-    \frac{2 r}{sigma^2} f
-    \]
-    \begin{itemize}
-        \item Which can be re-written as:
-    \end{itemize}
-    \[
-    \frac{\partial f}{\partial \tau} 
-    =
-    \frac{\partial^2 f}{\partial x^2}
-    +
-    (k - 1) \frac{\partial f}{\partial x}
-    -
-    k f
-    \]
-    \begin{itemize}
-        \item Where $k = \frac{2 r}{\sigma^2}$
-    \end{itemize}
-    \begin{itemize}
-        \item We see this is a PDE with similar form to the heat equation, but with extra terms $(k - 1) \frac{\partial f}{\partial x}$ and $- k f$
-        \item To make the extra terms disappear, we define a new mapping, where the exponential removes drift:
-    \end{itemize}
-    \[
-    f(x,\tau) = \exp(\alpha x + \beta \tau) u(x,\tau)
-    \]
-    \begin{itemize}
-        \item We then solve and choose $\alpha$ and $\beta$ such that the extra terms are removed, so we find:
-    \end{itemize}
-    \[
-    \alpha = \frac{-1}{2} (k - 1)
-    \]
-    \[
-    \beta = \frac{-1}{4} (k + 1)^2
-    \]
-    \begin{itemize}
-        \item Which leads to a direct relationship between actual price of the option $c(s,t)$, and the modified price $u(x,\tau)$
-        \item Substituting $\alpha$ and $\beta$ we find this relationship is given by:
-    \end{itemize}
-    \[
-    c(s,t) = K u(x,\tau) \exp\left(\frac{-1}{2} (k - 1) x - \frac{1}{4} (k + 1)^2 \ tau\right)
-    \]
-    \begin{itemize}
-        \item This allows us to conclude that the Black-Scholes equations can be expressed as the heat equation, where $\x$ is price of stock after transformations, $\tau$ is unit of time after transformations, and $u$ is the price of the option after transformations:
-    \end{itemize}
-    \[
-    \frac{\partial u}{\partial \tau} 
-    =
-    \frac{\partial^2 u}{\partial x^2}
-    \]
-    \[
-    - \infty < x < \infty
-    \]
-    \[
-    \tau > 0
-    \]
-    \begin{itemize}
-        \item Where we have the payoff boundary condition:
-    \end{itemize}
-    \[
-    u(x,0) = max\left\{
-    \exp\(\tfrac{1}{2}(k + 1) x\right)
-    -
-    \exp\(\tfrac{1}{2}(k - 1) x\right),
-    0}
-    \]
+\begin{frame}{Transformation to the Heat Equation}
+    Firstly, we define:
+    \[x = \ln\!\left(\frac{S(t)}{c(t)}\right) \qquad \text{and} \qquad \tau = \frac{1}{2} \sigma^2 (T - t)\]
+    Take log of price as stock price follows geometric Brownian motion. \\
+    Define rescale of time as time scaled by volatility. \\
+    Define mapping from $c(s,t)$ to $f(x,\tau)$ with strike price $K$ as scale factor:
+    \[c(s,t) = K f(x,\tau)\]
 \end{frame}
 
-\subsection{Final Solution}
+\begin{frame}
+    Substituting in the change of variables and mappings so far allows us to find the PDE:
+    \[\frac{\partial f}{\partial \tau} = \frac{\partial^2 f}{\partial x^2} + \left(\frac{2r}{\sigma^2} - 1\right) \frac{\partial f}{\partial x} - \frac{2r}{\sigma^2} f\]
+    which can be re-written as:
+    \[\frac{\partial f}{\partial \tau} = \frac{\partial^2 f}{\partial x^2} + (k - 1) \frac{\partial f}{\partial x} - k f\]
+    where $k = \dfrac{2r}{\sigma^2}$. We see this is a PDE with similar form to the heat equation, but with extra terms $(k - 1)\,\dfrac{\partial f}{\partial x}$ and $-kf$.
+\end{frame}
+
+\begin{frame}
+    To make the extra terms disappear, we define a new mapping, where the exponential removes drift:
+    \[f(x,\tau) = \exp(\alpha x + \beta \tau)\, u(x,\tau)\]
+    We then solve and choose $\alpha$ and $\beta$ such that the extra terms are removed, so we find:
+    \[\alpha = -\tfrac{1}{2}(k - 1) \qquad \text{and} \qquad \beta = -\tfrac{1}{4}(k + 1)^2\]
+    which leads to a direct relationship between actual price of the option $c(s,t)$, and the modified price $u(x,\tau)$.
+    Substituting $\alpha$ and $\beta$ we find this relationship is given by:
+    \[c(s,t) = K\, u(x,\tau)\, \exp\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
+\end{frame}
+
+\begin{frame}
+    This allows us to conclude that the Black-Scholes equation can be expressed as the heat equation, where $x$ is the price of the stock after transformations, $\tau$ is the unit of time after transformations, and $u$ is the price of the option after transformations:
+    \[\frac{\partial u}{\partial \tau} = \frac{\partial^2 u}{\partial x^2}, \qquad -\infty < x < \infty, \qquad \tau > 0\]
+    Where we have the payoff boundary condition:
+    \[u(x,0) = \max\!\left\{\exp\!\left(\tfrac{1}{2}(k+1)\,x\right) - \exp\!\left(\tfrac{1}{2}(k-1)\,x\right),\; 0\right\}\]
+\end{frame}
 
 \begin{frame}{Final Solution}
-    \begin{itemize}
-        \item We can then obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
-    \end{itemize}
-    \[ 
-    c = S_0 N(d_1) - K
-    \exp(-r T) N(d_2)
-    \]
-    \[
-    p = K
-    \exp(-r T) N(-d_2) - S_0 N(-d_1)
-    \]
-    \[
-    d_1 = \frac{\ln\left(\frac{S_0}{K}\right) + \left(r + \frac{\simga^2}{2}\right) (T - t)}{\sigma\sqrt{T - t}}
-    \]
-    \[
-    d_2 = \frac{\ln\left(\frac{S_0}{K}\right) + \left(r - \frac{\sigma^2}{2}\right) (T - t)}{\sigma\sqrt{T - t}}
-    =
-    d_1 - \sigma\sqrt{T - t}
-    \]
+    We can then obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
+    \[c = S_0 N(d_1) - K\exp(-rT)\,N(d_2) \qquad p = K\exp(-rT)\,N(-d_2) - S_0 N(-d_1)\]
+    where
+    \[d_1 = \frac{\ln\!\left(\dfrac{S_0}{K}\right) + \left(r + \dfrac{\sigma^2}{2}\right)(T - t)}{\sigma\sqrt{T - t}} \qquad \text{and} \qquad d_2 = d_1 - \sigma\sqrt{T - t}\]
 \end{frame}

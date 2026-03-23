@@ -8,11 +8,11 @@
         \item 2 hidden layers with 32 neurons each
         \item 1 output (option price)
     \end{itemize} \pause
-    
+
     \item \textbf{Activation Function:} Hyperbolic Tangent \pause
-    
+
     \item \textbf{Training Algorithm:} Adam optimizer \pause
-    
+
     \item \textbf{Training Duration:} 30,000 epochs
 \end{itemize}
 \end{frame}
@@ -21,11 +21,11 @@
 \begin{frame}{Computational Framework}
 \begin{itemize}
     \item Implemented in \textbf{Python 3} \pause
-    
+
     \item Built using the \textbf{Torch framework} \pause
-    
+
     \item Utilized the \textbf{Neurodiffeq} library \pause
-    
+
     \item Purpose: Solve differential equations using neural networks
 \end{itemize}
 \end{frame}
@@ -34,13 +34,13 @@
 \begin{frame}{Mathematical Methodology}
 \begin{itemize}
     \item Transformed the \textbf{Black-Scholes equation} into the heat equation \pause
-    
+
     \item Change of variables:
     \begin{itemize}
         \item Generalized price: $x$
         \item Generalized time: $\tau$
     \end{itemize} \pause
-    
+
     \item Applied real market payoff data as boundary conditions
 \end{itemize}
 \end{frame}
@@ -50,23 +50,17 @@
 To evaluate model performance:
 \begin{itemize}
     \item \textbf{MAE} -- Mean Absolute Error \pause
-    \begin{center}
-        \begin{math}
-            MAE = \frac{1}{N} \sum_{i=1}^{N} \left| Y_i - \hat{Y}_i \right|
-        \end{math}
-    \end{center}
+    \[
+        \text{MAE} = \frac{1}{N} \sum_{i=1}^{N} \left| Y_i - \hat{Y}_i \right|
+    \]
     \item \textbf{MSE} -- Mean Square Error \pause
-    \begin{center}
-        \begin{math}
-             MSE = \frac{1}{N} \sum_{i=1}^{N} ( Y_i - \hat{Y}_i )^2
-        \end{math}
-    \end{center}
+    \[
+        \text{MSE} = \frac{1}{N} \sum_{i=1}^{N} \left( Y_i - \hat{Y}_i \right)^2
+    \]
     \item \textbf{MAPE} -- Mean Absolute Percentage Error \pause
-    \begin{center}
-        \begin{math}
-            MAPE = \frac{1}{N} \sum_{i=1}^{N} \left| \frac{Y_i - \hat{Y}_i}{Y_i} \right|
-        \end{math}
-    \end{center}
+    \[
+        \text{MAPE} = \frac{1}{N} \sum_{i=1}^{N} \left| \frac{Y_i - \hat{Y}_i}{Y_i} \right|
+    \]
 \end{itemize}
 \end{frame}
 
@@ -75,69 +69,70 @@ To evaluate model performance:
 To evaluate model performance:
 \begin{itemize}
     \item \textbf{POCID} -- Prediction of Change in Direction \pause
-    \begin{center}
-        \begin{math}
-            POCID = 100 \cdot \frac{\sum_{i=1}^{N} D_i}{N}
-        \end{math}
-    \end{center}
+    \[
+        \text{POCID} = 100 \cdot \frac{\sum_{i=1}^{N} D_i}{N}
+    \]
     where
-    \begin{center}
-        \begin{math}
+    \[
         D_i =
         \begin{cases}
-        1, & \text{if } (Y_i - Y_{i-1})(\hat{Y}_i - \hat{Y}_{i-1}) > 0 \\
-        0, & \text{otherwise}
+            1, & \text{if } (Y_i - Y_{i-1})(\hat{Y}_i - \hat{Y}_{i-1}) > 0 \\
+            0, & \text{otherwise}
         \end{cases}
-        \end{math}
-    \end{center}
-    \item \textbf{ARV} -- Average Relative Variance
-    \begin{center}
-        \begin{math}
-        ARV = \frac{ \frac{1}{N} \sum_{i=1}^{N} (\hat{Y}_i - Y_i)^2 }
-        { \frac{1}{N} \sum_{i=1}^{N} (\hat{Y}_i - \bar{Y})^2 }
-        \end{math}
-    \end{center}
+    \]
+    \item \textbf{ARV} -- Average Relative Variance \pause
+    \[
+        \text{ARV} = \frac{\displaystyle\sum_{i=1}^{N} (\hat{Y}_i - Y_i)^2}
+                         {\displaystyle\sum_{i=1}^{N} (\hat{Y}_i - \bar{Y})^2}
+    \]
 \end{itemize}
 \end{frame}
 
 % =========================
 \begin{frame}{Results}
-    The experimental results demonstrate that the Multi-Layer Perceptron (MLP) neural network successfully learned to solve the modified Black-Scholes equation, providing more accurate option pricing forecasts than traditional analytical solutions.
+    The experimental results demonstrate that the Multi-Layer Perceptron (MLP) neural network
+    successfully learned to solve the modified Black-Scholes equation, providing more accurate
+    option pricing forecasts than traditional analytical solutions.
 \end{frame}
 
 % =========================
 \begin{frame}{Table 1}
     \begin{center}
         \includegraphics[width=0.6\textwidth]{images/Table1.png}
-    \end{center} \pause
-\end{frame}
-
-% =========================
-\begin{frame}{Table 1}
-    \begin{center}
-        \includegraphics[width=0.6\textwidth]{images/Table1.png}
-    \end{center} \pause
+    \end{center}
 \end{frame}
 
 % =========================
 \begin{frame}{Figure 1}
-    \begin{center}
-        \includegraphics[width=0.6\textwidth]{images/Figure11.png}
-        \includegraphics[width=0.6\textwidth]{images/Figure12.png}
-    \end{center} \pause
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/Figure11.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/Figure12.png}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 % =========================
 \begin{frame}{Table 2}
     \begin{center}
         \includegraphics[width=0.6\textwidth]{images/Table2.png}
-    \end{center} \pause
+    \end{center}
 \end{frame}
 
 % =========================
 \begin{frame}{Figure 2}
-    \begin{center}
-        \includegraphics[width=0.6\textwidth]{images/Figure21.png}
-        \includegraphics[width=0.6\textwidth]{images/Figure22.png}
-    \end{center} \pause
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/Figure21.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{images/Figure22.png}
+        \end{column}
+    \end{columns}
 \end{frame}
