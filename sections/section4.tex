@@ -1,20 +1,165 @@
 \section{Evaluation and Conclusion}
 
-\subsection{Subsection 1}
+\subsection{Strengths}
 
-\begin{frame}{Frame Title}
-    \begin{itemize}[<+-| alert@+>] % Besides alert, use \pause also works
-        \item This is not an official NTU \LaTeX{} Beamer template. 
-        \item Code is available at: \url{https://github.com/l0rem1psum/ntu-beamer-template}, all issues and pull requests are welcome.
-    \end{itemize}
+\begin{frame}{Table 3: Interpretation of Results}
+
+\begin{itemize}
+\item \textbf{Table 3} presents the statistical errors of the neural network across different option contracts
+
+\item The accuracy varies significantly between contracts
+
+\item Options with lower strike prices (in-the-money) generally show lower errors
+
+\item Options with higher errors tend to be less stable or less frequently traded
+
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Key insight:} The performance of the neural network depends on the characteristics of the option, particularly trading activity and moneyness.
+
 \end{frame}
 
-\subsection{Subsection 2}
+\begin{frame}{Figure 3: Model Comparison}
 
-\begin{frame}{Frame Title}
+\begin{itemize}
+\item \textbf{Figure 3} compares:
     \begin{itemize}
-        \item This template is modified from Tsinghua University's Beamer template: \url{https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb} \pause
-        \item The original template is modified from \newline \url{https://www.latexstudio.net/archives/4051.html}
-        \item The real original template is not found \cite{origin}.
+        \item Market price (SPOT)
+        \item Black--Scholes (BLS)
+        \item Neural network (NN)
     \end{itemize}
+
+\item (a): Best NN prediction (low MSE)
+\item (b): Worst NN prediction (high MSE)
+
+\item NN follows market trend well in (a), but deviates more in (b)
+
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Key insight:} Neural networks can closely match market prices in some cases, but performance is not consistent across all scenarios.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Evaluation and Conclusion}
+So far, we have seen how the Black-Scholes equation can be derived from financial principles and transformed into a PDE, and how a neural
+network can be trained to approximate its solution. \vspace{0.4cm}
+
+In this final section, we will evaluate this approach by briefly discussing its strengths, limitations, and implications for financial modelling.
+\end{frame}
+
+\begin{frame}
+\frametitle{Strengths of the Neural Network Approach}
+Recall the Black-Scholes equation: \[
+\frac{\partial V(S,t)}{\partial t}
++ \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V(S,t)}{\partial S^2}
++ rS \frac{\partial V(S,t)}{\partial S}
+- rV(S,t) = 0
+\]
+
+\vspace{0.5cm}
+
+We want to approximate the option value $V(S,t)$. By utilising neural networks, we have the following advantages:  
+\begin{itemize}[<+-| alert@+>]
+    \item Handles higher dimensions
+    \item Applicable Without Closed-Form Solutions
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Advantage 1: Handles Higher-Dimensional Problems}
+
+In more realistic financial models, the option price may depend on
+more than one variable.
+
+\vspace{0.3cm}
+
+For example, an option depending on two assets can be written as
+\[
+V = V(S_1,S_2,t)
+\]
+
+This leads to a larger PDE involving derivatives with respect to
+both asset prices.
+
+\vspace{0.3cm}
+
+As the number of variables increases, solving the PDE becomes
+more complicated. Neural networks can approximate these
+higher-dimensional solutions more easily.
+
+\end{frame}
+
+\begin{frame}{Advantage 2: Applicable Even Without Closed-Form Solution}
+
+Not all options have a simple formula like the standard European call.
+
+\vspace{0.3cm}
+
+For example, an Asian option depends on the average stock price over time:
+\[
+V = V\Big(S(t), \frac{1}{T}\int_0^T S(t) dt, t\Big)
+\]
+
+This makes it difficult to obtain a closed-form solution.
+
+\vspace{0.3cm}
+
+However, the Black--Scholes PDE still applies as it gives a rule that the option price must satisfy, even for these complex cases.
+
+\end{frame}
+
+\subsection{Limitations}
+
+\begin{frame}{Limitation 1: High Computational Cost}
+
+\begin{itemize}[<+-| alert@+>]
+\item Neural networks must be trained using many sampled points from the PDE domain
+\item Each training step requires computing derivatives of the network output (PDE residual)
+\item This makes training significantly slower than standard finite difference methods for simple PDEs
+\item For the classical Black--Scholes model, closed-form or fast numerical methods are often more efficient
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Limitation 2: Harder to Interpret}
+
+\begin{itemize}[<+-| alert@+>]
+\item Neural networks are often described as "black-box" models because the internal decision process is not easily interpretable
+\item Unlike analytical Black--Scholes formulas, it is difficult to see how individual inputs (e.g. volatility or strike price) affect the output
+\item Model accuracy depends strongly on training data and network design choices
+\item This lack of transparency can be a concern in financial settings where interpretability is important
+\end{itemize}
+
+\end{frame}
+
+\subsection{Implications for Financial Modelling}
+
+\begin{frame}{Implications for Financial Modelling}
+
+\begin{itemize}[<+-| alert@+>]
+\item Neural networks provide a flexible framework for solving option pricing PDEs
+\item They can incorporate market data, potentially capturing effects not reflected in classical models
+\item Useful for high-dimensional or complex derivatives where analytical formulas are unavailable
+\item Even when closed-form solutions exist, they may not fully match observed market prices
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Conclusion}
+
+\begin{itemize}
+\item The Black--Scholes equation provides a fundamental PDE framework for option pricing in financial mathematics
+\item While classical methods rely on analytical solutions or grid-based numerical schemes, these approaches can be limited in complexity and scalability
+\item Neural networks offer an alternative approach by directly approximating the PDE solution in a flexible way
+\item This makes them particularly useful for high-dimensional problems and financial models
+\item However, issues such as computational cost, interpretability, and model validation remain important in practical applications
+\end{itemize}
+
+\vspace{0.3cm}
+
 \end{frame}
