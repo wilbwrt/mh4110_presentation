@@ -1,20 +1,274 @@
-\section{Neural Network}
+\definecolor{nnblue}{RGB}{31, 78, 121}
+\definecolor{nnaccent}{RGB}{0, 112, 192}
+\definecolor{nngray}{RGB}{89, 89, 89}
+\definecolor{nngreen}{RGB}{0, 128, 0}
+\definecolor{nnred}{RGB}{192, 0, 0}
+\definecolor{lightyellow}{RGB}{255, 252, 220}
+\definecolor{lightblue}{RGB}{220, 235, 252}
+\setbeamercolor{block title}{bg=nnblue, fg=white}
+\setbeamercolor{block body}{bg=lightblue}
+\setbeamercolor{alertblock title}{bg=nnred, fg=white}
+\setbeamercolor{exampleblock title}{bg=nngreen, fg=white}
+\setbeamercolor{exampleblock body}{bg=green!8}
 
-\subsection{What is a Neural Network?}
+\section{Neural Network Learning}
+%% ==========================================================
+\subsection{Why Neural Networks?}
+%% ==========================================================
+\begin{frame}{The Analytical Solution and Its Limits}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \textbf{The Black-Scholes-Merton formula} \citep{black1973} gives a closed-form option price:
+      \vspace{0.3em}
+      \[c = S_0 N(d_1) - K e^{-rT} N(d_2)\]
+      \vspace{0.3em}
+      \textbf{Assumptions required:}
+      \begin{itemize}
+        \item Constant volatility $\sigma$
+        \item Log-normal returns
+        \item No dividends
+        \item Frictionless markets
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{alertblock}{Market Reality}
+        For dates \textbf{far from maturity}, the analytical solution tracks the \emph{stock price}, not the \emph{option price}.\\[0.5em]
+        It only converges to market prices near expiration.
+      \end{alertblock}
+      \vspace{0.5em}
+      \begin{exampleblock}{Key Claim \citep{santos2024}}
+        The issue is not the PDE itself. The real-world divergence comes from the \textbf{analytical solution} applied in practice.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+%% ----------------------------------------------------------
+\begin{frame}{PDE-Constrained Learning: The Core Idea}
+  \begin{center}
+  \begin{tikzpicture}[
+    box/.style={draw, rounded corners, minimum width=3.2cm, minimum height=1cm,
+                align=center, font=\small},
+    arrow/.style={-Stealth, thick}
+  ]
+    \node[box, fill=blue!15]   (pde)      {Black-Scholes PDE\\(heat equation form)};
+    \node[box, fill=orange!20, right=2.2cm of pde] (analytic) {Analytical\\B-S-M Formula};
+    \node[box, fill=green!20,  below=1.6cm of pde] (nn)       {Neural Network\\Solver};
+    \node[box, fill=red!15,    right=2.2cm of nn]  (market)   {Real Market\\Boundary Data};
 
-\begin{frame}{Frame Title}
-    \begin{itemize}[<+-| alert@+>] % Besides alert, use \pause also works
-        \item This is not an official NTU \LaTeX{} Beamer template. 
-        \item Code is available at: \url{https://github.com/l0rem1psum/ntu-beamer-template}, all issues and pull requests are welcome.
-    \end{itemize}
+    \draw[arrow]         (pde)    -- node[above, font=\footnotesize]{standard route} (analytic);
+    \draw[arrow, dashed] (pde)    -- node[left,  font=\footnotesize]{this paper}     (nn);
+    \draw[arrow]         (market) -- node[below, font=\footnotesize]{boundary conditions} (nn);
+
+    \node[draw=nnred,   dashed, thick, rounded corners,
+          fit=(analytic), inner sep=8pt,
+          label={[font=\footnotesize, text=nnred]above:deviates far from maturity}] {};
+    \node[draw=nngreen, dashed, thick, rounded corners,
+          fit=(nn)(market), inner sep=8pt,
+          label={[font=\footnotesize, text=nngreen]below:data-constrained solution}] {};
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.2em}
+  \begin{block}{This is not regression}
+    The network does not curve-fit option prices directly. It must learn a function that \textbf{satisfies the PDE} as a mathematical constraint while matching real market boundary data.
+  \end{block}
+\end{frame}
+%% ==========================================================
+\subsection{Methodology}
+%% ==========================================================
+\begin{frame}{(A) The PDE as an Optimization Problem}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{Standard PDE formulation:}
+      \[
+        D(u) - F = 0
+      \]
+      \textbf{Network output} $\hat{u}$: a candidate solution.\\[0.4em]
+      \textbf{Residual:}
+      \[
+        \mathcal{R}(\hat{u}) = D(\hat{u}) - F
+      \]
+      \textbf{Training objective:}
+      \[
+        \min_{\theta} \; \|\mathcal{R}(\hat{u}_\theta)\|^2
+      \]
+      When $\mathcal{R} = 0$ everywhere, $\hat{u}$ is an exact solution.
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Physics-Informed Neural Networks}
+        This is the core of \textbf{PINNs}, first proposed by \citet{lagaris1998} and extended by \citet{raissi2019}.\\[0.4em]
+        The PDE residual acts as a \textbf{physics-based regularizer} constraining the solution space.
+      \end{block}
+      \vspace{0.3em}
+      \footnotesize
+      \textcolor{nngray}{For Black-Scholes: $F = 0$ (homogeneous heat equation), $D(\cdot) = \partial_\tau - \partial_{xx}$}
+    \end{column}
+  \end{columns}
+\end{frame}
+%% ----------------------------------------------------------
+\begin{frame}{(B) Enforcing Boundary Conditions}
+
+  \textbf{Problem:} Minimizing the residual alone does not guarantee the network satisfies the initial condition (option payoff at expiration).
+
+  \vspace{0.5em}
+  \textbf{Solution: modified trial function \citep{lagaris1998, chen2020}:}
+  \[
+    \tilde{u}(x, \tau) = \underbrace{u_{\tau_0}(x)}_{\text{known payoff}} +
+    \underbrace{\left[1 - e^{-(\tau - \tau_0)}\right]}_{\substack{\text{= 0 at } \tau = \tau_0 \\ \to 1 \text{ as } \tau \text{ grows}}} \cdot \hat{u}(x, \tau)
+  \]
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Effect}
+        At $\tau = \tau_0$:\quad $\tilde{u} = u_{\tau_0}(x)$ \textbf{exactly}\\[0.3em]
+        As $\tau$ grows:\quad $\tilde{u} \approx \hat{u}(x,\tau)$
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{alertblock}{Why not a penalty term?}
+        Penalty-based enforcement creates competing gradients. The modified trial function bakes the constraint into the architecture: satisfied \emph{analytically}, not approximately.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.4em}
+  \footnotesize
+  General form: $\tilde{u}(x,\tau) = A(x,\tau;\,x_\text{bdy},\tau_0)\,\hat{u}(x,\tau)$, where $A$ encodes all boundary constraints. Implemented via \textbf{NeuroDiffEq} \citep{chen2020}.
+
 \end{frame}
 
-\subsection{MLP Neural Networks}
+%% ----------------------------------------------------------
+\begin{frame}{(C) Network Architecture: Structure}
 
-\begin{frame}{Frame Title}
-    \begin{itemize}
-        \item This template is modified from Tsinghua University's Beamer template: \url{https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb} \pause
-        \item The original template is modified from \newline \url{https://www.latexstudio.net/archives/4051.html}
-        \item The real original template is not found \cite{origin}.
-    \end{itemize}
+  \begin{center}
+  \begin{tikzpicture}[
+    neuron/.style={circle, draw, minimum size=0.72cm, inner sep=0pt, font=\small},
+    layer/.style={font=\small, align=center},
+    arrow/.style={-Stealth, thin, gray}
+  ]
+    %% Input layer
+    \node[neuron, fill=orange!30] (i1) at (0, -0.5)  {$x$};
+    \node[neuron, fill=orange!30] (i2) at (0, -2.2)  {$\tau$};
+
+    %% Hidden 1 (5 shown, 32 implied)
+    \foreach \i in {1,...,5} {
+      \node[neuron, fill=blue!20] (h1\i) at (2.8, {0.4 - \i*0.72}) {};
+    }
+    \node[font=\small, blue!70]        at (2.8, -4.05) {$\vdots$};
+    \node[font=\footnotesize, blue!80] at (2.8, -4.6)  {32 neurons};
+
+    %% Hidden 2
+    \foreach \i in {1,...,5} {
+      \node[neuron, fill=blue!20] (h2\i) at (5.6, {0.4 - \i*0.72}) {};
+    }
+    \node[font=\small, blue!70]        at (5.6, -4.05) {$\vdots$};
+    \node[font=\footnotesize, blue!80] at (5.6, -4.6)  {32 neurons};
+
+    %% Output
+    \node[neuron, fill=green!30] (o1) at (8.4, -1.35) {$u$};
+
+    %% Edges input -> h1
+    \foreach \src in {1,2} {
+      \foreach \dst in {1,...,5} {
+        \draw[arrow] (i\src) -- (h1\dst);
+      }
+    }
+    %% Edges h1 -> h2
+    \foreach \src in {1,...,5} {
+      \foreach \dst in {1,...,5} {
+        \draw[arrow] (h1\src) -- (h2\dst);
+      }
+    }
+    %% Edges h2 -> output
+    \foreach \src in {1,...,5} {
+      \draw[arrow] (h2\src) -- (o1);
+    }
+
+    %% Layer labels above
+    \node[layer] at (0,   0.85) {Input\\(2)};
+    \node[layer] at (2.8, 0.85) {Hidden 1\\(32)};
+    \node[layer] at (5.6, 0.85) {Hidden 2\\(32)};
+    \node[layer] at (8.4, 0.85) {Output\\(1)};
+
+    \node[right=0.18cm of o1, font=\small] {$= u(x,\tau)$};
+
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.1em}
+  \centering\footnotesize
+  MLP with architecture $2 \to 32 \to 32 \to 1$ \citep{santos2024}.
+  Inputs are transformed coordinates $(x,\tau)$; output is the generalised option price.
+
+\end{frame}
+
+%% ----------------------------------------------------------
+\begin{frame}{(C) Network Architecture: Training Details}
+
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \renewcommand{\arraystretch}{1.3}
+      \footnotesize
+      \begin{tabular}{p{2.0cm} p{4.6cm}}
+        \toprule
+        \textbf{Component} & \textbf{Choice} \\
+        \midrule
+        Architecture    & MLP ($2 \to 32 \to 32 \to 1$) \\
+        Input $x$       & $\ln(S/c)$, scaled by $K$ \\
+        Input $\tau$    & $\tfrac{1}{2}\sigma^2(T-t)$ \\
+        Activation      & $\tanh$ \\
+        Optimizer       & Adam \citep{kingma2015} \\
+        Epochs          & 30{,}000 \\
+        Framework       & PyTorch \citep{paszke2019} \\
+        Library         & NeuroDiffEq \citep{chen2020} \\
+        \bottomrule
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Why tanh? \citep{lagaris1998, goodfellow2016}}
+        \small Smooth and differentiable everywhere. Computing the PDE residual requires differentiating the network output w.r.t.\ inputs, so the activation must be differentiable across the whole domain.
+      \end{block}
+      \vspace{0.35em}
+      \begin{block}{Why Adam? \citep{kingma2015}}
+        \small Adapts the learning rate per parameter using gradient moment estimates. Converges faster than vanilla SGD, especially when gradient scales vary across the network.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%% ----------------------------------------------------------
+\begin{frame}{Coordinate Transformation: Connecting $u$ to Real Prices}
+
+  The network operates in transformed coordinates \citep{santos2024}. Recovering the real option price requires two substitutions:
+
+  \vspace{0.3em}
+  \begin{block}{Variable Substitutions (Black-Scholes $\to$ Heat Equation)}
+    \[
+      x = \ln\!\left(\frac{S(t)}{c(t)}\right), \qquad
+      \tau = \tfrac{1}{2}\sigma^2 (T - t)
+    \]
+    \[
+      c(S,t) = K\,\hat{u}(x,\tau)\,\exp\!\left(-\tfrac{1}{2}(k-1)x - \tfrac{1}{4}(k+1)^2\tau\right), \quad k = \frac{2r}{\sigma^2}
+    \]
+  \end{block}
+
+  \vspace{0.3em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Inputs to the network:}
+      \begin{itemize}
+        \item $x$: log-scaled, normalised price ratio
+        \item $\tau$: variance-scaled time to maturity
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Output from the network:}
+      \begin{itemize}
+        \item $u(x,\tau)$: generalised (transformed) price
+        \item Back-transform gives $c(S,t)$ in BRL
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
 \end{frame}
