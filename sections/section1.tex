@@ -38,16 +38,19 @@
                 \item $t$ = time
                 \item $c$ = call option price
                 \item $p$ = put option price
-                \item $S$ = spot stock price
-                \item $r$ = risk free interest rate
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{itemize}
+                \item $S$ = spot stock price
+                \item $r$ = risk free interest rate
                 \item $\sigma$ = stock volatility
+<<<<<<< HEAD
                 \item $S_0$ = spot stock price at time zero
                 \item $K$ = strike price
                 \item $T$ = time to maturity
+=======
+>>>>>>> 6fba8794ae770884eb3ffd5cb30d031ca76e7d3d
             \end{itemize}
         \end{column}
     \end{columns}
@@ -68,7 +71,7 @@
 
 \begin{frame}{Transformation to the Heat Equation}
     Firstly, we define:
-    \[x = \ln\!\left(\frac{S(t)}{c(t)}\right) \qquad \text{and} \qquad \tau = \frac{1}{2} \sigma^2 (T - t)\]
+    \[x = \ln\!\left(\frac{S(t)}{K(t)}\right) \qquad \text{and} \qquad \tau = \frac{1}{2} \sigma^2 (T - t)\]
     Take log of price as stock price follows geometric Brownian motion. \\
     Define rescale of time as time scaled by volatility. \\
     Define mapping from $c(s,t)$ to $f(x,\tau)$ with strike price $K$ as scale factor:
