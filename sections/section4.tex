@@ -6,23 +6,17 @@
 
 \begin{itemize}
 \item \textbf{Table 3} presents the statistical errors of the neural network across different option contracts
-
 \item The accuracy varies significantly between contracts
-
 \item Options with lower strike prices (in-the-money) generally show lower errors
-
 \item Options with higher errors tend to be less stable or less frequently traded
-
 \end{itemize}
 
 \vspace{0.3cm}
 
 \textbf{Key insight:} The performance of the neural network depends on the characteristics of the option, particularly trading activity and moneyness.
-
 \end{frame}
 
 \begin{frame}{Figure 3: Model Comparison}
-
 \begin{itemize}
 \item \textbf{Figure 3} compares:
     \begin{itemize}
@@ -30,12 +24,9 @@
         \item Black--Scholes (BLS)
         \item Neural network (NN)
     \end{itemize}
-
 \item (a): Best NN prediction (low MSE)
 \item (b): Worst NN prediction (high MSE)
-
 \item NN follows market trend well in (a), but deviates more in (b)
-
 \end{itemize}
 
 \vspace{0.3cm}
@@ -64,7 +55,7 @@ Recall the Black-Scholes equation: \[
 \vspace{0.5cm}
 
 We want to approximate the option value $V(S,t)$. By utilising neural networks, we have the following advantages:  
-\begin{itemize}[<+-| alert@+>]
+\begin{itemize}
     \item Handles higher dimensions
     \item Applicable Without Closed-Form Solutions
 \end{itemize}
@@ -117,7 +108,7 @@ However, the Black--Scholes PDE still applies as it gives a rule that the option
 
 \begin{frame}{Limitation 1: High Computational Cost}
 
-\begin{itemize}[<+-| alert@+>]
+\begin{itemize}
 \item Neural networks must be trained using many sampled points from the PDE domain
 \item Each training step requires computing derivatives of the network output (PDE residual)
 \item This makes training significantly slower than standard finite difference methods for simple PDEs
@@ -128,7 +119,7 @@ However, the Black--Scholes PDE still applies as it gives a rule that the option
 
 \begin{frame}{Limitation 2: Harder to Interpret}
 
-\begin{itemize}[<+-| alert@+>]
+\begin{itemize}
 \item Neural networks are often described as "black-box" models because the internal decision process is not easily interpretable
 \item Unlike analytical Black--Scholes formulas, it is difficult to see how individual inputs (e.g. volatility or strike price) affect the output
 \item Model accuracy depends strongly on training data and network design choices
@@ -141,7 +132,7 @@ However, the Black--Scholes PDE still applies as it gives a rule that the option
 
 \begin{frame}{Implications for Financial Modelling}
 
-\begin{itemize}[<+-| alert@+>]
+\begin{itemize}
 \item Neural networks provide a flexible framework for solving option pricing PDEs
 \item They can incorporate market data, potentially capturing effects not reflected in classical models
 \item Useful for high-dimensional or complex derivatives where analytical formulas are unavailable

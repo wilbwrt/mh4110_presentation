@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  24 MAR 2026 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  24 MAR 2026 13:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1292,7 +1292,7 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 50.
  (c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-<images/ntu-logo.png, id=131, 3011.25pt x 2007.5pt>
+<images/ntu-logo.png, id=125, 3011.25pt x 2007.5pt>
 File: images/ntu-logo.png Graphic file (type png)
 <use images/ntu-logo.png>
 Package pdftex.def Info: images/ntu-logo.png  used on input line 50.
@@ -1374,23 +1374,71 @@ Overfull \hbox (12.61905pt too wide) in paragraph at lines 227--227
 
 ]) (./sections/section3.tex (./main.toc) [26
 
-] [27
+]
+Overfull \hbox (8.10985pt too wide) in paragraph at lines 39--39
+[][]  
+ []
 
-] [28
+[27
+
+]
+Underfull \hbox (badness 1496) in paragraph at lines 69--69
+[]|$\T1/cmss/m/n/10 100 \OMS/cmsy/m/n/10 ^^A []\OML/cmm/m/it/10 ;  \OT1/mathkerncmss/m/sl/10 D[] \OT1/cmss/m/n/10 = \U/msb/m/n/10 1[]\OT1/cmss/m/n/10 (\OT1/mathkerncmss/m/sl/10 Y[] \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+Overfull \vbox (11.44691pt too high) detected at line 69
+ []
+
+[28
 
 ] [29
 
-] [30
+]
+<images/Table1.png, id=3973, 572.1375pt x 358.33875pt>
+File: images/Table1.png Graphic file (type png)
+<use images/Table1.png>
+Package pdftex.def Info: images/Table1.png  used on input line 83.
+(pdftex.def)             Requested size: 239.00558pt x 149.69202pt.
+ [30
 
-] [31
+ <./images/Table1.png>]
+<images/Figure11.png, id=4103, 485.56406pt x 371.13657pt>
+File: images/Figure11.png Graphic file (type png)
+<use images/Figure11.png>
+Package pdftex.def Info: images/Figure11.png  used on input line 97.
+(pdftex.def)             Requested size: 199.1693pt x 152.22926pt.
+<images/Figure12.png, id=4104, 402.00188pt x 143.03438pt>
+File: images/Figure12.png Graphic file (type png)
+<use images/Figure12.png>
+Package pdftex.def Info: images/Figure12.png  used on input line 97.
+(pdftex.def)             Requested size: 199.1693pt x 70.86443pt.
+ [31
 
-] [32
+ <./images/Figure11.png> <./images/Figure12.png>]
+<images/Table2.png, id=4235, 472.76625pt x 298.11375pt>
+File: images/Table2.png Graphic file (type png)
+<use images/Table2.png>
+Package pdftex.def Info: images/Table2.png  used on input line 104.
+(pdftex.def)             Requested size: 239.00558pt x 150.71228pt.
+ [32
 
-] [33
+ <./images/Table2.png>]
+<images/Figure21.png, id=4363, 475.7775pt x 365.11406pt>
+File: images/Figure21.png Graphic file (type png)
+<use images/Figure21.png>
+Package pdftex.def Info: images/Figure21.png  used on input line 118.
+(pdftex.def)             Requested size: 199.1693pt x 152.84544pt.
+<images/Figure22.png, id=4364, 405.01312pt x 137.7647pt>
+File: images/Figure22.png Graphic file (type png)
+<use images/Figure22.png>
+Package pdftex.def Info: images/Figure22.png  used on input line 118.
+(pdftex.def)             Requested size: 199.1693pt x 67.74913pt.
+ [33
 
-] [34
+ <./images/Figure21.png> <./images/Figure22.png>]) (./sections/section4.tex (./main.toc) [34
 
-] [35
+] (./main.toc) [35
 
 ] [36
 
@@ -1404,73 +1452,27 @@ Overfull \hbox (12.61905pt too wide) in paragraph at lines 227--227
 
 ] [41
 
-]
-Overfull \vbox (3.99435pt too high) detected at line 89
- []
+] [42
 
-[42
+] (./main.toc) [43
 
-]
-Overfull \vbox (3.99435pt too high) detected at line 89
- []
-
-[43
-
-]
-Overfull \vbox (3.99435pt too high) detected at line 89
- []
-
-[44
+] [44
 
 ] [45
 
-]
-<images/Table1.png, id=5589, 572.1375pt x 358.33875pt>
-File: images/Table1.png Graphic file (type png)
-<use images/Table1.png>
-Package pdftex.def Info: images/Table1.png  used on input line 103.
-(pdftex.def)             Requested size: 239.00558pt x 149.69202pt.
- [46
+] [46
 
- <./images/Table1.png>]
-<images/Figure11.png, id=5725, 485.56406pt x 371.13657pt>
-File: images/Figure11.png Graphic file (type png)
-<use images/Figure11.png>
-Package pdftex.def Info: images/Figure11.png  used on input line 117.
-(pdftex.def)             Requested size: 199.1693pt x 152.22926pt.
-<images/Figure12.png, id=5726, 402.00188pt x 143.03438pt>
-File: images/Figure12.png Graphic file (type png)
-<use images/Figure12.png>
-Package pdftex.def Info: images/Figure12.png  used on input line 117.
-(pdftex.def)             Requested size: 199.1693pt x 70.86443pt.
- [47
+] [47
 
- <./images/Figure11.png> <./images/Figure12.png>]
-<images/Table2.png, id=5862, 472.76625pt x 298.11375pt>
-File: images/Table2.png Graphic file (type png)
-<use images/Table2.png>
-Package pdftex.def Info: images/Table2.png  used on input line 124.
-(pdftex.def)             Requested size: 239.00558pt x 150.71228pt.
- [48
+] [48
 
- <./images/Table2.png>]
-<images/Figure21.png, id=5997, 475.7775pt x 365.11406pt>
-File: images/Figure21.png Graphic file (type png)
-<use images/Figure21.png>
-Package pdftex.def Info: images/Figure21.png  used on input line 138.
-(pdftex.def)             Requested size: 199.1693pt x 152.84544pt.
-<images/Figure22.png, id=5998, 405.01312pt x 137.7647pt>
-File: images/Figure22.png Graphic file (type png)
-<use images/Figure22.png>
-Package pdftex.def Info: images/Figure22.png  used on input line 138.
-(pdftex.def)             Requested size: 199.1693pt x 67.74913pt.
- [49
+] [49
 
- <./images/Figure21.png> <./images/Figure22.png>]) (./sections/section4.tex (./main.toc) [50
+] [50
 
-] (./main.toc) [51
+] [51
 
-] [52
+] (./main.toc) [52
 
 ] [53
 
@@ -1482,41 +1484,9 @@ Package pdftex.def Info: images/Figure22.png  used on input line 138.
 
 ] [57
 
-] [58
+]) [58
 
-] (./main.toc) [59
-
-] [60
-
-] [61
-
-] [62
-
-] [63
-
-] [64
-
-] [65
-
-] [66
-
-] [67
-
-] (./main.toc) [68
-
-] [69
-
-] [70
-
-] [71
-
-] [72
-
-] [73
-
-]) [74
-
-] [75
+] [59
 
 
 ]
@@ -1539,18 +1509,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38590 strings out of 467533
- 749145 string characters out of 5423669
- 1620941 words of memory out of 5000000
- 66567 multiletter control sequences out of 15000+600000
+ 38554 strings out of 467533
+ 748892 string characters out of 5423669
+ 1620001 words of memory out of 5000000
+ 66562 multiletter control sequences out of 15000+600000
  666436 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,838b,2222s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on main.pdf (75 pages, 1183862 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
+Output written on main.pdf (59 pages, 1127513 bytes).
 PDF statistics:
- 9176 PDF objects out of 10688 (max. 8388607)
- 6152 compressed objects within 62 object streams
- 172 named destinations out of 1000 (max. 500000)
+ 7420 PDF objects out of 7423 (max. 8388607)
+ 4729 compressed objects within 48 object streams
+ 141 named destinations out of 1000 (max. 500000)
  212 words of extra memory for PDF output out of 10000 (max. 10000000)
 

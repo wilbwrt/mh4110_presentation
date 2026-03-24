@@ -1,91 +1,71 @@
 \section{Experimentation and Results}
 
-\begin{frame}{Neural Network Architecture}
-\begin{itemize}
-    \item \textbf{Structure:} 2-32-32-1
-    \begin{itemize}
-        \item 2 inputs
-        \item 2 hidden layers with 32 neurons each
-        \item 1 output (option price)
-    \end{itemize} \pause
+\begin{frame}{Experimental Setup: Data}
 
-    \item \textbf{Activation Function:} Hyperbolic Tangent \pause
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \textbf{Market:} Brazilian Stock Exchange (B3) \cite{santos2024}
 
-    \item \textbf{Training Algorithm:} Adam optimizer \pause
+      \vspace{0.5em}
+      \begin{tabular}{lll}
+        \toprule
+        \textbf{Stock} & \textbf{Ticker} & \textbf{Series} \\
+        \midrule
+        Petrobras & PETR4 & PETRA (12 options) \\
+                  &       & PETRD (11 options) \\
+        Vale      & VALE3 & VALED (10 options) \\
+        \bottomrule
+      \end{tabular}
 
-    \item \textbf{Training Duration:} 30,000 epochs
-\end{itemize}
+      \vspace{0.6em}
+      \begin{itemize}
+        \item Series A: maturity \textbf{January 2023}
+        \item Series D: maturity \textbf{April 2023}
+        \item \textbf{Call options only} (puts excluded due to low volume)
+        \item Interest rate: SELIC = \textbf{13.75\%} p.a.\ (fixed)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Why Petrobras and Vale?}
+        Highest trading volume on B3, giving dense and reliable time series. Other stocks such as Banco do Brasil and WEG had too many days without trades to be usable.
+      \end{block}
+      \vspace{0.5em}
+      \begin{block}{Data transformation}
+        Raw market prices are converted to $(x, \tau)$ coordinates before training. The payoff function serves as the initial boundary condition in transformed space.
+      \end{block}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 % =========================
-\begin{frame}{Computational Framework}
-\begin{itemize}
-    \item Implemented in \textbf{Python 3} \pause
+\begin{frame}{Error Metrics \cite{ferreira2008}}
 
-    \item Built using the \textbf{Torch framework} \pause
-
-    \item Utilized the \textbf{Neurodiffeq} library \pause
-
-    \item Purpose: Solve differential equations using neural networks
-\end{itemize}
-\end{frame}
-
-% =========================
-\begin{frame}{Mathematical Methodology}
-\begin{itemize}
-    \item Transformed the \textbf{Black-Scholes equation} into the heat equation \pause
-
-    \item Change of variables:
-    \begin{itemize}
-        \item Generalized price: $x$
-        \item Generalized time: $\tau$
-    \end{itemize} \pause
-
-    \item Applied real market payoff data as boundary conditions
-\end{itemize}
-\end{frame}
-
-% =========================
-\begin{frame}{Evaluation Metrics I}
-To evaluate model performance:
-\begin{itemize}
-    \item \textbf{MAE} -- Mean Absolute Error \pause
-    \[
-        \text{MAE} = \frac{1}{N} \sum_{i=1}^{N} \left| Y_i - \hat{Y}_i \right|
-    \]
-    \item \textbf{MSE} -- Mean Square Error \pause
-    \[
-        \text{MSE} = \frac{1}{N} \sum_{i=1}^{N} \left( Y_i - \hat{Y}_i \right)^2
-    \]
-    \item \textbf{MAPE} -- Mean Absolute Percentage Error \pause
-    \[
-        \text{MAPE} = \frac{1}{N} \sum_{i=1}^{N} \left| \frac{Y_i - \hat{Y}_i}{Y_i} \right|
-    \]
-\end{itemize}
-\end{frame}
-
-% =========================
-\begin{frame}{Evaluation Metrics II}
-To evaluate model performance:
-\begin{itemize}
-    \item \textbf{POCID} -- Prediction of Change in Direction \pause
-    \[
-        \text{POCID} = 100 \cdot \frac{\sum_{i=1}^{N} D_i}{N}
-    \]
-    where
-    \[
-        D_i =
-        \begin{cases}
-            1, & \text{if } (Y_i - Y_{i-1})(\hat{Y}_i - \hat{Y}_{i-1}) > 0 \\
-            0, & \text{otherwise}
-        \end{cases}
-    \]
-    \item \textbf{ARV} -- Average Relative Variance \pause
-    \[
-        \text{ARV} = \frac{\displaystyle\sum_{i=1}^{N} (\hat{Y}_i - Y_i)^2}
-                         {\displaystyle\sum_{i=1}^{N} (\hat{Y}_i - \bar{Y})^2}
-    \]
-\end{itemize}
+  \vspace{0.1em}
+  \small
+  \renewcommand{\arraystretch}{1.65}
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabular}{>{\bfseries}p{1.3cm} p{5.0cm} p{5.9cm}}
+    \toprule
+    \textbf{Metric} & \textbf{Formula} & \textbf{What it measures} \\
+    \midrule
+    MAE
+      & $\displaystyle\frac{1}{N}\sum_{i=1}^{N} \bigl|Y_i - \hat{Y}_i\bigr|$
+      & Average absolute pricing error in BRL. Lower is better. \\
+    MSE
+      & $\displaystyle\frac{1}{N}\sum_{i=1}^{N} (Y_i - \hat{Y}_i)^2$
+      & Like MAE but squares errors, penalising large misses more heavily. \\
+    MAPE
+      & $\displaystyle\frac{1}{N}\sum_{i=1}^{N} \left|\frac{Y_i - \hat{Y}_i}{Y_i}\right|$
+      & Relative error; comparable across options at different price levels. \\
+    POCID
+      & $\displaystyle 100 \cdot \frac{\sum D_i}{N}, \quad D_i = \mathbb{1}_\{(Y_i - Y_{i-1})(\hat{Y}_i - \hat{Y}_{i-1}) > 0\}$
+      & Fraction of days the model correctly predicted price direction. 100\% is perfect. \\
+    ARV
+      & $\displaystyle\frac{\sum(\hat{Y}_i - Y_i)^2}{\sum(\hat{Y}_i - \bar{Y})^2}$
+      & Ratio to series variance. Below 1 beats a naive mean predictor; 0 is ideal. \\
+    \bottomrule
+  \end{tabular}
 \end{frame}
 
 % =========================

@@ -139,6 +139,43 @@
       \field{title}{Neural Network Learning of {Black-Scholes} Equation for Option Pricing}
       \field{year}{2024}
     \endentry
+    \entry{ferreira2008}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=871e0bc92ef183fc5e771d8c99c8e8be}{%
+           family={Ferreira},
+           familyi={F\bibinitperiod},
+           given={Tiago\bibnamedelimb A.\bibnamedelimi E.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=abb06d5c11f8a5237e2a45f1cf5ff10e}{%
+           family={Vasconcelos},
+           familyi={V\bibinitperiod},
+           given={Germano\bibnamedelima C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b11d71766df8894fa0efd1c03a87b699}{%
+           family={Adeodato},
+           familyi={A\bibinitperiod},
+           given={Paulo\bibnamedelimb J.\bibnamedelimi L.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \strng{fullhash}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \strng{fullhashraw}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \strng{bibnamehash}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \strng{authorbibnamehash}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \strng{authornamehash}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \strng{authorfullhash}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \strng{authorfullhashraw}{ca05f0540c3fc04e49f0b620c7371ca2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural Processing Letters}
+      \field{title}{A New Intelligent System Methodology for Time Series Forecasting with Artificial Neural Networks}
+      \field{volume}{28}
+      \field{year}{2008}
+      \field{pages}{113\bibrangedash 129}
+      \range{pages}{17}
+    \endentry
     \entry{goodfellow2016}{book}{}{}
       \name{author}{3}{}{%
         {{hash=5d2585c11210cf1d4512e6e0a03ec315}{%
