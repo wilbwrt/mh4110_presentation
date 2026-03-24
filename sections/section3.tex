@@ -40,30 +40,30 @@
 
 % =========================
 \begin{frame}{Error Metrics \cite{ferreira2008}}
-
-  \vspace{0.1em}
-  \small
-  \renewcommand{\arraystretch}{1.65}
+  \vspace{0.2em}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.4}
   \setlength{\tabcolsep}{5pt}
-  \begin{tabular}{>{\bfseries}p{1.3cm} p{5.0cm} p{5.9cm}}
+  \begin{tabular}{>{\bfseries}p{1.1cm} p{6.2cm} p{4.6cm}}
     \toprule
     \textbf{Metric} & \textbf{Formula} & \textbf{What it measures} \\
     \midrule
     MAE
       & $\displaystyle\frac{1}{N}\sum_{i=1}^{N} \bigl|Y_i - \hat{Y}_i\bigr|$
-      & Average absolute pricing error in BRL. Lower is better. \\
+      & Average absolute error in BRL. Lower is better. \\[3pt]
     MSE
       & $\displaystyle\frac{1}{N}\sum_{i=1}^{N} (Y_i - \hat{Y}_i)^2$
-      & Like MAE but squares errors, penalising large misses more heavily. \\
+      & Squares errors; penalises large misses more heavily. \\[3pt]
     MAPE
       & $\displaystyle\frac{1}{N}\sum_{i=1}^{N} \left|\frac{Y_i - \hat{Y}_i}{Y_i}\right|$
-      & Relative error; comparable across options at different price levels. \\
+      & Relative error; comparable across different price levels. \\[3pt]
     POCID
-      & $\displaystyle 100 \cdot \frac{\sum D_i}{N}, \quad D_i = \mathbb{1}_\{(Y_i - Y_{i-1})(\hat{Y}_i - \hat{Y}_{i-1}) > 0\}$
-      & Fraction of days the model correctly predicted price direction. 100\% is perfect. \\
+      & $\displaystyle 100 \cdot \frac{\sum_{i=1}^{N} D_i}{N}$, \quad
+        $D_i = \mathbf{1}_{\left[(Y_i\!-\!Y_{i-1})(\hat{Y}_i\!-\!\hat{Y}_{i-1}) > 0\right]}$
+      & Fraction of days the model correctly predicted price direction. \\[3pt]
     ARV
-      & $\displaystyle\frac{\sum(\hat{Y}_i - Y_i)^2}{\sum(\hat{Y}_i - \bar{Y})^2}$
-      & Ratio to series variance. Below 1 beats a naive mean predictor; 0 is ideal. \\
+      & $\displaystyle\frac{\sum_{i=1}^{N}(\hat{Y}_i - Y_i)^2}{\sum_{i=1}^{N}(\hat{Y}_i - \bar{Y})^2}$
+      & Below 1 beats a naive mean predictor; 0 is a perfect model. \\
     \bottomrule
   \end{tabular}
 \end{frame}
