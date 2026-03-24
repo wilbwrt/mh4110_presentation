@@ -41,20 +41,20 @@
 %% ----------------------------------------------------------
 \begin{frame}{PDE-Constrained Learning: The Core Idea}
   \begin{center}
-  \begin{tikzpicture}[
+    \begin{tikzpicture}[
     box/.style={draw, rounded corners, minimum width=3.2cm, minimum height=0.9cm,
                 align=center, font=\small},
     arrow/.style={-Stealth, thick}
   ]
     \node[box, fill=ntu-blue!12]  (pde)      {Black-Scholes PDE\\(heat equation form)};
-    \node[box, fill=orange!20, right=2.2cm of pde] (analytic) {Analytical\\B-S-M Formula};
+    \node[box, fill=orange!20, right=3.8cm of pde] (analytic) {Analytical\\B-S-M Formula};
     \node[box, fill=green!15,  below=1.3cm of pde] (nn)       {Neural Network\\Solver};
-    \node[box, fill=ntu-red!10, right=2.2cm of nn] (market)   {Real Market\\Boundary Data};
-
+    \node[box, fill=ntu-red!10, right=3.8cm of nn] (market)   {Real Market\\Boundary Data};
+ 
     \draw[arrow]         (pde)    -- node[above, font=\footnotesize]{standard route} (analytic);
     \draw[arrow, dashed] (pde)    -- node[left,  font=\footnotesize]{this paper}     (nn);
     \draw[arrow]         (market) -- node[below, font=\footnotesize]{boundary conditions} (nn);
-
+ 
     \node[draw=ntu-red, dashed, thick, rounded corners,
           fit=(analytic), inner sep=8pt,
           label={[font=\footnotesize, text=ntu-red]above:deviates far from maturity}] {};
