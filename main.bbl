@@ -279,6 +279,49 @@
       \field{pages}{987\bibrangedash 1000}
       \range{pages}{14}
     \endentry
+    \entry{liang2009}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=75ec52356bbeb8c841fa50173b4a4cbd}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Xun},
+           giveni={X\bibinitperiod}}}%
+        {{hash=38e2273f89977635b444557ec052aec9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haisheng},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cab00528c096c214b70ad9fd7977da45}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Jianguo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d001bce88e27fe293cfaf3708133e2ec}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4fa8c53aaabf9d91a86bcca55ac4973}
+      \strng{fullhash}{c22e35346f1bdccf9232bbb6fbee1394}
+      \strng{fullhashraw}{c22e35346f1bdccf9232bbb6fbee1394}
+      \strng{bibnamehash}{c4fa8c53aaabf9d91a86bcca55ac4973}
+      \strng{authorbibnamehash}{c4fa8c53aaabf9d91a86bcca55ac4973}
+      \strng{authornamehash}{c4fa8c53aaabf9d91a86bcca55ac4973}
+      \strng{authorfullhash}{c22e35346f1bdccf9232bbb6fbee1394}
+      \strng{authorfullhashraw}{c22e35346f1bdccf9232bbb6fbee1394}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neurocomputing}
+      \field{number}{13}
+      \field{title}{Improving Option Price Forecasts with Neural Networks and Support Vector Regressions}
+      \field{volume}{72}
+      \field{year}{2009}
+      \field{pages}{3055\bibrangedash 3065}
+      \range{pages}{11}
+    \endentry
     \entry{paszke2019}{inproceedings}{}{}
       \true{moreauthor}
       \true{morelabelname}

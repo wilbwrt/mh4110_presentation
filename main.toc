@@ -6,7 +6,9 @@
 \beamer@subsectionintoc {2}{1}{Why Neural Networks?}{17}{0}{2}
 \beamer@subsectionintoc {2}{2}{Methodology}{20}{0}{2}
 \beamer@sectionintoc {3}{Experimentation and Results}{26}{0}{3}
-\beamer@sectionintoc {4}{Evaluation and Conclusion}{34}{0}{4}
-\beamer@subsectionintoc {4}{1}{Strengths}{35}{0}{4}
-\beamer@subsectionintoc {4}{2}{Limitations}{43}{0}{4}
-\beamer@subsectionintoc {4}{3}{Implications for Financial Modelling}{52}{0}{4}
+\beamer@subsectionintoc {3}{1}{Experimental Setup}{27}{0}{3}
+\beamer@subsectionintoc {3}{2}{Results}{31}{0}{3}
+\beamer@sectionintoc {4}{Evaluation and Conclusion}{37}{0}{4}
+\beamer@subsectionintoc {4}{1}{Strengths}{38}{0}{4}
+\beamer@subsectionintoc {4}{2}{Limitations}{45}{0}{4}
+\beamer@subsectionintoc {4}{3}{Implications for Financial Modelling}{48}{0}{4}

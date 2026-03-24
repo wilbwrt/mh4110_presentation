@@ -1,5 +1,5 @@
 \section{Experimentation and Results}
-
+\subsection{Experimental Setup}
 \begin{frame}{Experimental Setup: Data}
 
   \begin{columns}[T]
@@ -69,6 +69,35 @@
 \end{frame}
 
 % =========================
+\begin{frame}{What to Look For in the Results}
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      \small
+      \textbf{Graph color key \cite{santos2024}:}
+      \begin{itemize}
+        \item \textcolor{blue}{\textbf{Blue}} — actual option market price
+        \item \textcolor{purple}{\textbf{Purple}} — underlying stock price (SPOT)
+        \item \textcolor{magenta}{\textbf{Magenta}} — analytical B-S solution (BLS)
+        \item \textcolor{nngreen}{\textbf{Green}} — neural network prediction (NN)
+      \end{itemize}
+
+      \vspace{0.25em}
+      \textbf{What to look for:}
+      Green tracks blue throughout. Magenta follows purple and only converges to blue near expiration.
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{exampleblock}{Benchmark \cite{liang2009}}
+        Hong Kong options forecasting with NNs and SVR.\\[0.2em]
+        Best MAE reported: \textbf{14.3}\\[0.2em]
+        This paper (Petrobras): MAE $\approx$ \textbf{2.6}\\
+        This paper (Vale): avg.\ MAE $\approx$ \textbf{5.6}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =========================
+\subsection{Results}
 \begin{frame}{Results}
     The experimental results demonstrate that the Multi-Layer Perceptron (MLP) neural network
     successfully learned to solve the modified Black-Scholes equation, providing more accurate

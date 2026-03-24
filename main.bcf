@@ -2392,6 +2392,8 @@
     <bcf:citekey order="15" intorder="1">santos2024</bcf:citekey>
     <bcf:citekey order="16" intorder="1">santos2024</bcf:citekey>
     <bcf:citekey order="17" intorder="1">ferreira2008</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">santos2024</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">liang2009</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
