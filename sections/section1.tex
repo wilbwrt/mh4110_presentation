@@ -62,7 +62,9 @@
         \[\text{payoff} = \text{strike} - \text{spot}\]
         \item For a European call option, we have the terminal condition:
         \[\text{payoff} = \max\left\{S_T - K,\, 0\right\}\]
-        \item So we have the lower bound of zero for $S = 0$, and the upper bound of $S$ as $S \to \infty$
+        \item For a European put option, we have the terminal condition:
+        \[\text{payoff} = \max\left\{K - S_T,\, 0\right\}\]
+        where $t = T$ because this is the exact moment of expiration of the option
     \end{itemize}
 \end{frame}
 
