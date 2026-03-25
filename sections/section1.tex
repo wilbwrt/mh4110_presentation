@@ -99,7 +99,7 @@
 \end{frame}
 
 \begin{frame}
-    This allows us to conclude that the Black-Scholes equation can be expressed as the heat equation, where $x$ is the price of the stock after transformations, $\tau$ is the unit of time after transformations, and $u$ is the price of the option after transformations:
+    After substituting this relationship into the original Black-Scholes equation, we are left with the heat equation. So we see that the Black-Scholes equation can be transformed to the heat equation, where $x$ is the price of the stock after transformations, $\tau$ is the unit of time after transformations, and $u$ is the price of the option after transformations:
     \[\frac{\partial u}{\partial \tau} = \frac{\partial^2 u}{\partial x^2}, \qquad -\infty < x < \infty, \qquad \tau > 0\]
     Where we have the payoff boundary condition:
     \[u(x,0) = \max\!\left\{\exp\!\left(\tfrac{1}{2}(k+1)\,x\right) - \exp\!\left(\tfrac{1}{2}(k-1)\,x\right),\; 0\right\}\]
