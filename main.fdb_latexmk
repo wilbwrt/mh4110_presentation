@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1774331195.0101 "main.bcf" "main.bbl" "main" 1774345982.98696 0
-  "main.bcf" 1774345982 109929 a2e679d5645a2991c0b079928186d247 "pdflatex"
+["biber main"] 1774331195.0101 "main.bcf" "main.bbl" "main" 1774423517.7988 0
+  "main.bcf" 1774423517 109929 a2e679d5645a2991c0b079928186d247 "pdflatex"
   "references.bib" 1774280579 3369 25e249a87ac3dceac2b6502c82184d26 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774345965.73721 "c:/Users/wilbe/OneDrive/Documents/Nanyang Technological University/Y3S2 (Jan-May 26)/MH4110 Partial Differential Equations/mh4110_presentation/main.tex" "main.pdf" "main" 1774345982.98874 0
+["pdflatex"] 1774423501.30413 "c:/Users/wilbe/OneDrive/Documents/Nanyang Technological University/Y3S2 (Jan-May 26)/MH4110 Partial Differential Equations/mh4110_presentation/main.tex" "main.pdf" "main" 1774423517.80053 2
   "NTU.sty" 1772683615 3387 be92f48853f8b18752180cd31b1555e3 ""
   "c:/Users/wilbe/OneDrive/Documents/Nanyang Technological University/Y3S2 (Jan-May 26)/MH4110 Partial Differential Equations/mh4110_presentation/main.tex" 1774332008 2211 89e805784c1635418bb8165b5a07c19d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1770210339 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -352,13 +352,12 @@
   "images/figure3.png" 1774345408 59008 65f3b3e8d3685bd2ef3fbb765255297a ""
   "images/ntu-logo.png" 1772682777 115559 221415c989e5f1447f432482f9ef8cf5 ""
   "images/table3.png" 1774345408 52434 19aecd3ad8fc235e516c36a09e738a87 ""
-  "main.aux" 1774345982 18530 a93f702d8507fecb39de4d70640c856b "pdflatex"
+  "main.aux" 1774423517 18527 9be9286b4a898ed97f7329fe4166dbcf "pdflatex"
   "main.bbl" 1774331199 17390 bfe7fe849c9cb2a6639186b73a350339 "biber main"
-  "main.nav" 1774345982 8054 e485ffba669fc7cb48dfb5901a92a7c3 "pdflatex"
-  "main.run.xml" 1774345982 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "main.nav" 1774423517 8054 e485ffba669fc7cb48dfb5901a92a7c3 "pdflatex"
   "main.tex" 1774332008 2211 89e805784c1635418bb8165b5a07c19d ""
-  "main.toc" 1774345982 859 d72bb0e6b4463a6acf2b2ecf048e91cd "pdflatex"
-  "sections/section1.tex" 1774332956 5807 e6097e5525b80751960b71771baf0398 ""
+  "main.toc" 1774423517 859 d72bb0e6b4463a6acf2b2ecf048e91cd "pdflatex"
+  "sections/section1.tex" 1774423477 6612 3f65d8ef95dac5b535b72828885a3d67 ""
   "sections/section2.tex" 1774332755 10952 4af29eb8161b5459a6a7a02415299554 ""
   "sections/section3.tex" 1774332000 5513 a0f89d2ecfdc9a15c1f068c87f8a158e ""
   "sections/section4.tex" 1774345945 5972 2683bc6ed463c3e41c548eccdca1c45f ""
