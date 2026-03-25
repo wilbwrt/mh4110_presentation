@@ -59,7 +59,7 @@
 \begin{frame}{Boundary Conditions}
     \begin{itemize}
         \item Boundary conditions come from the payoff, given by:
-        \[\text{payoff} = \text{strike} - \text{spot } S_t\]
+        \[\text{payoff} = \text{strike} - \text{spot}\]
         \item For a European call option, we have the terminal condition:
         \[\text{payoff} = \max\left\{S_T - K,\, 0\right\}\]
         \item So we have the lower bound of zero for $S = 0$, and the upper bound of $S$ as $S \to \infty$
@@ -87,14 +87,14 @@
 
 \begin{frame}
     To make the extra terms disappear, we define a new mapping, where the exponential removes drift:
-    \[f(x,\tau) = \exp(\alpha x + \beta \tau)\, u(x,\tau)\]
+    \[f(x,\tau) = \e^(\alpha x + \beta \tau)\, u(x,\tau)\]
     Drift is the expected return of an asset over time. We remove it and replace it with the risk-free rate to create a risk-neutral environment.
     The exponential function removes drift
     We then solve and choose $\alpha$ and $\beta$ such that the extra terms are removed, so we find:
     \[\alpha = -\tfrac{1}{2}(k - 1) \qquad \text{and} \qquad \beta = -\tfrac{1}{4}(k + 1)^2\]
     which leads to a direct relationship between actual price of the option $c(s,t)$, and the modified price $u(x,\tau)$.
     Substituting $\alpha$ and $\beta$ we find this relationship is given by:
-    \[c(s,t) = K\, u(x,\tau)\, \exp\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
+    \[c(s,t) = K\, u(x,\tau)\, \e^\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
     which will later be used by the ANN.
 \end{frame}
 
@@ -102,15 +102,15 @@
     After substituting this relationship into the original Black-Scholes equation, we are left with the heat equation. So we see that the Black-Scholes equation can be transformed to the heat equation, where $x$ is the price of the stock after transformations, $\tau$ is the unit of time after transformations, and $u$ is the price of the option after transformations:
     \[\frac{\partial u}{\partial \tau} = \frac{\partial^2 u}{\partial x^2}, \qquad -\infty < x < \infty, \qquad \tau > 0\]
     Where we have the payoff boundary condition:
-    \[u(x,0) = \max\!\left\{\exp\!\left(\tfrac{1}{2}(k+1)\,x\right) - \exp\!\left(\tfrac{1}{2}(k-1)\,x\right),\; 0\right\}\]
+    \[u(x,0) = \max\!\left\{\e^\!\left(\tfrac{1}{2}(k+1)\,x\right) - \e^\!\left(\tfrac{1}{2}(k-1)\,x\right),\; 0\right\}\]
 \end{frame}
 
 \begin{frame}{Final Solution}
     We then solve this much more simple PDE and find $\u(x, \tau)$ using the Gaussian kernel. 
     Substituting this into 
-    \[c(s,t) = K\, u(x,\tau)\, \exp\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
+    \[c(s,t) = K\, u(x,\tau)\, \e^\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
     we can obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
-    \[c = S_0 N(d_1) - K\exp(-rT)\,N(d_2) \qquad p = K\exp(-rT)\,N(-d_2) - S_0 N(-d_1)\]
+    \[c = S_0 N(d_1) - K\e^(-rT)\,N(d_2) \qquad p = K\e^(-rT)\,N(-d_2) - S_0 N(-d_1)\]
     where
     \[d_1 = \frac{\ln\!\left(\dfrac{S_0}{K}\right) + \left(r + \dfrac{\sigma^2}{2}\right)(T - t)}{\sigma\sqrt{T - t}} \qquad \text{and} \qquad d_2 = d_1 - \sigma\sqrt{T - t}\]
 \end{frame}
