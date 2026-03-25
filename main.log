@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  24 MAR 2026 14:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  25 MAR 2026 15:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1345,7 +1345,19 @@ Non-PDF special ignored!
 
 ] [14
 
-] [15
+]
+
+LaTeX Warning: Command \u invalid in math mode on input line 119.
+
+./sections/section1.tex:119: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.119 \end{frame}
+                 
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+[15
 
 ]) (./sections/section2.tex (./main.toc) [16
 
@@ -1389,131 +1401,4 @@ Underfull \hbox (badness 2418) in paragraph at lines 69--69
  []
 
 
-LaTeX Font Warning: Font shape `T1/cmss/b/n' undefined
-(Font)              using `T1/cmss/m/n' instead on input line 69.
-
-[29
-
-] [30
-
-] (./main.toc) [31
-
-] [32
-
-]
-<images/Table1.png, id=4576, 572.1375pt x 358.33875pt>
-File: images/Table1.png Graphic file (type png)
-<use images/Table1.png>
-Package pdftex.def Info: images/Table1.png  used on input line 112.
-(pdftex.def)             Requested size: 239.00558pt x 149.69202pt.
- [33
-
- <./images/Table1.png>]
-<images/Figure11.png, id=4712, 485.56406pt x 371.13657pt>
-File: images/Figure11.png Graphic file (type png)
-<use images/Figure11.png>
-Package pdftex.def Info: images/Figure11.png  used on input line 126.
-(pdftex.def)             Requested size: 199.1693pt x 152.22926pt.
-<images/Figure12.png, id=4713, 402.00188pt x 143.03438pt>
-File: images/Figure12.png Graphic file (type png)
-<use images/Figure12.png>
-Package pdftex.def Info: images/Figure12.png  used on input line 126.
-(pdftex.def)             Requested size: 199.1693pt x 70.86443pt.
- [34
-
- <./images/Figure11.png> <./images/Figure12.png>]
-<images/Table2.png, id=4849, 472.76625pt x 298.11375pt>
-File: images/Table2.png Graphic file (type png)
-<use images/Table2.png>
-Package pdftex.def Info: images/Table2.png  used on input line 133.
-(pdftex.def)             Requested size: 239.00558pt x 150.71228pt.
- [35
-
- <./images/Table2.png>]
-<images/Figure21.png, id=4984, 475.7775pt x 365.11406pt>
-File: images/Figure21.png Graphic file (type png)
-<use images/Figure21.png>
-Package pdftex.def Info: images/Figure21.png  used on input line 147.
-(pdftex.def)             Requested size: 199.1693pt x 152.84544pt.
-<images/Figure22.png, id=4985, 405.01312pt x 137.7647pt>
-File: images/Figure22.png Graphic file (type png)
-<use images/Figure22.png>
-Package pdftex.def Info: images/Figure22.png  used on input line 147.
-(pdftex.def)             Requested size: 199.1693pt x 67.74913pt.
- [36
-
- <./images/Figure21.png> <./images/Figure22.png>]) (./sections/section4.tex (./main.toc) [37
-
-] (./main.toc) [38
-
-] [39
-
-] [40
-
-] [41
-
-] [42
-
-] [43
-
-] [44
-
-] (./main.toc) [45
-
-] [46
-
-] [47
-
-] (./main.toc) [48
-
-] [49
-
-] [50
-
-]) [51
-
-] [52
-
-
-] [53
-
-
-]
-\tf@nav=\write6
-\openout6 = `main.nav'.
-
-\tf@toc=\write7
-\openout7 = `main.toc'.
-
-\tf@snm=\write8
-\openout8 = `main.snm'.
-
- (./main.aux)
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
- ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 38569 strings out of 467533
- 749103 string characters out of 5423669
- 1621055 words of memory out of 5000000
- 66582 multiletter control sequences out of 15000+600000
- 666436 words of font info for 144 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 128i,20n,123p,838b,2222s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on main.pdf (53 pages, 1124879 bytes).
-PDF statistics:
- 7456 PDF objects out of 8907 (max. 8388607)
- 4463 compressed objects within 45 object streams
- 132 named destinations out of 1000 (max. 500000)
- 228 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+LaTeX Font Warning: Font shape `T1/cmss/b/n' undef

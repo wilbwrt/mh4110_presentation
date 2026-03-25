@@ -2,37 +2,45 @@
 
 \subsection{Strengths}
 
-\begin{frame}{Table 3: Interpretation of Results}
-
-\begin{itemize}
-\item \textbf{Table 3} presents the statistical errors of the neural network across different option contracts
-\item The accuracy varies significantly between contracts
-\item Options with lower strike prices (in-the-money) generally show lower errors
-\item Options with higher errors tend to be less stable or less frequently traded
-\end{itemize}
-
-\vspace{0.3cm}
-
-\textbf{Key insight:} The performance of the neural network depends on the characteristics of the option, particularly trading activity and moneyness.
+\begin{frame}{Table 3: Vale Options (VALED)}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{images/table3.png}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item Errors vary significantly across contracts
+        \item In-the-money options (lower strike) generally show lower errors
+        \item Higher errors tend to correspond to less frequently traded contracts
+        \item \textbf{Key insight:} NN performance depends on the option's trading activity and moneyness
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Figure 3: Model Comparison}
-\begin{itemize}
-\item \textbf{Figure 3} compares:
-    \begin{itemize}
-        \item Market price (SPOT)
-        \item Black--Scholes (BLS)
-        \item Neural network (NN)
-    \end{itemize}
-\item (a): Best NN prediction (low MSE)
-\item (b): Worst NN prediction (high MSE)
-\item NN follows market trend well in (a), but deviates more in (b)
-\end{itemize}
-
-\vspace{0.3cm}
-
-\textbf{Key insight:} Neural networks can closely match market prices in some cases, but performance is not consistent across all scenarios.
-
+\begin{frame}{Figure 3: Model Comparison (VALED)}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{images/figure3.png}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \textbf{Each plot shows three curves:}
+      \begin{itemize}
+        \item Market price (OPTION)
+        \item Black-Scholes solution (BLS)
+        \item Neural network output (NN)
+      \end{itemize}
+      \vspace{0.5em}
+      \begin{itemize}
+        \item (a) Best NN case: low MSE, NN tracks market closely
+        \item (b) Worst NN case: high MSE, NN deviates more noticeably
+      \end{itemize}
+      \vspace{0.5em}
+      \textbf{Key insight:} NN outperforms BLS overall, but accuracy is not uniform across all contracts
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
