@@ -91,7 +91,7 @@
     To make the extra terms disappear, we define a new mapping, where the exponential removes drift:
     \[f(x,\tau) = \exp(\alpha x + \beta \tau)\, u(x,\tau)\]
     Drift is the expected return of an asset over time. We remove it and replace it with the risk-free rate to create a risk-neutral environment.
-    The exponential function removes drift
+    The exponential function removes drift.
     We then solve and choose $\alpha$ and $\beta$ such that the extra terms are removed, so we find:
     \[\alpha = -\tfrac{1}{2}(k - 1) \qquad \text{and} \qquad \beta = -\tfrac{1}{4}(k + 1)^2\]
     which leads to a direct relationship between actual price of the option $c(s,t)$, and the modified price $u(x,\tau)$.
@@ -108,7 +108,7 @@
 \end{frame}
 
 \begin{frame}{Final Solution}
-    We then solve this much more simple PDE and find $u(x, \tau)$ using the Gaussian kernel. 
+    We then solve this much more simple PDE and find $\u(x, \tau)$ using the Gaussian kernel. 
     Substituting this into 
     \[c(s,t) = K\, u(x,\tau)\, \exp\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
     we can obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
