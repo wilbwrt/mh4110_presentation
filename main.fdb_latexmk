@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1774457909.44343 "main.bcf" "main.bbl" "main" 1774500897.45097 0
-  "main.bcf" 1774500897 109929 a2e679d5645a2991c0b079928186d247 "pdflatex"
+["biber main"] 1774457909.44343 "main.bcf" "main.bbl" "main" 1774507301.51509 0
+  "main.bcf" 1774507300 109929 a2e679d5645a2991c0b079928186d247 "pdflatex"
   "references.bib" 1774280579 3369 25e249a87ac3dceac2b6502c82184d26 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774500883.8125 "c:/Users/wilbe/OneDrive/Documents/Nanyang Technological University/Y3S2 (Jan-May 26)/MH4110 Partial Differential Equations/mh4110_presentation/main.tex" "main.pdf" "main" 1774500897.45166 0
+["pdflatex"] 1774507271.81949 "c:/Users/wilbe/OneDrive/Documents/Nanyang Technological University/Y3S2 (Jan-May 26)/MH4110 Partial Differential Equations/mh4110_presentation/main.tex" "main.pdf" "main" 1774507301.51693 0
   "NTU.sty" 1772683615 3387 be92f48853f8b18752180cd31b1555e3 ""
   "c:/Users/wilbe/OneDrive/Documents/Nanyang Technological University/Y3S2 (Jan-May 26)/MH4110 Partial Differential Equations/mh4110_presentation/main.tex" 1774457531 2160 2310c2a7deea1ef160acbb08efaa255e ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1770210339 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -295,14 +295,14 @@
   "images/figure3.png" 1774345408 59008 65f3b3e8d3685bd2ef3fbb765255297a ""
   "images/ntu-logo.png" 1772682777 115559 221415c989e5f1447f432482f9ef8cf5 ""
   "images/table3.png" 1774345408 52434 19aecd3ad8fc235e516c36a09e738a87 ""
-  "main.aux" 1774500897 14116 10c24d92a4d8e9ee03a9eb762e5d8fe5 "pdflatex"
+  "main.aux" 1774507300 14116 10c24d92a4d8e9ee03a9eb762e5d8fe5 "pdflatex"
   "main.bbl" 1774457912 17390 bfe7fe849c9cb2a6639186b73a350339 "biber main"
-  "main.nav" 1774500897 8050 64dbaf764afd8cca31746caddd2a2d45 "pdflatex"
-  "main.out" 1774500897 2332 e62781bc260af3a1bef5525f697ee57d "pdflatex"
-  "main.run.xml" 1774500897 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "main.nav" 1774507300 8050 64dbaf764afd8cca31746caddd2a2d45 "pdflatex"
+  "main.out" 1774507300 2332 e62781bc260af3a1bef5525f697ee57d "pdflatex"
+  "main.run.xml" 1774507300 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
   "main.tex" 1774457531 2160 2310c2a7deea1ef160acbb08efaa255e ""
-  "main.toc" 1774500897 859 8cba6af60a23c2faa5a44951abbe5d99 "pdflatex"
-  "sections/section1.tex" 1774500616 6866 c6662be78e74ef693adce888cf54b473 ""
+  "main.toc" 1774507300 859 8cba6af60a23c2faa5a44951abbe5d99 "pdflatex"
+  "sections/section1.tex" 1774507262 6705 3f539ef25c83ec5388f3d19521fc8d97 ""
   "sections/section2.tex" 1774499342 10956 dbe0aada2f4cdf4685a83d4c34d06bb2 ""
   "sections/section3.tex" 1774491869 7040 eeea6bb263759f122c48ab973bcfca33 ""
   "sections/section4.tex" 1774491869 4432 f1216e41bc6ffffe1ecb7ee31227382e ""
