@@ -22,7 +22,8 @@
 \begin{frame}{Black-Scholes Background}
     \begin{itemize}
         \item Developed in 1970s by Fischer Black, Myron Scholes, and Robert Merton
-        \item Provides an analytic solution to a second order parabolic partial differential equation by a transformation to the heat equation
+        \item Transformation to the heat equation to find analytic solution to a second order parabolic PDE
+        \item The solutions to this PDE are the options prices
         \item Leads to conclusion that options pricing dynamic is similar to heat dissipation
         \item Based on European style options
         \item American style options pricing can only be done numerically, not analytically
@@ -72,15 +73,15 @@
 
 \begin{frame}{Transformation to the Heat Equation}
     Firstly, we define:
-    \[x = \ln\!\left(\frac{S(t)}{K}\right) \qquad \text{and} \qquad \tau = \frac{1}{2} \sigma^2 (T - t)\]
+    \[x = \ln\!\left(\frac{S(t)}{c(t)}\right) \qquad \text{and} \qquad \tau = \frac{1}{2} \sigma^2 (T - t)\]
     Take log of price as stock price follows geometric Brownian motion. \\
-    Define rescale of time as time scaled by volatility. \\
+    Scale time by volatility. \\
     Define mapping from $c(s,t)$ to $f(x,\tau)$ with strike price $K$ as scale factor:
     \[c(s,t) = K f(x,\tau)\]
 \end{frame}
 
 \begin{frame}
-    Substituting in the partial derivatives from Black-Scholes allows us to find the PDE:
+    Substituting in the partial derivatives into Black-Scholes allows us to find the new PDE:
     \[\frac{\partial f}{\partial \tau} = \frac{\partial^2 f}{\partial x^2} + \left(\frac{2r}{\sigma^2} - 1\right) \frac{\partial f}{\partial x} - \frac{2r}{\sigma^2} f\]
     which can be re-written as:
     \[\frac{\partial f}{\partial \tau} = \frac{\partial^2 f}{\partial x^2} + (k - 1) \frac{\partial f}{\partial x} - k f\]
@@ -88,31 +89,31 @@
 \end{frame}
 
 \begin{frame}
-    To make the extra terms disappear, we define a new mapping, where the exponential removes drift:
+    To make the extra terms disappear, we define a new mapping:
     \[f(x,\tau) = \exp(\alpha x + \beta \tau)\, u(x,\tau)\]
     Drift is the expected return of an asset over time. We remove it and replace it with the risk-free rate to create a risk-neutral environment.
     The exponential function removes drift.
     We then solve and choose $\alpha$ and $\beta$ such that the extra terms are removed, so we find:
     \[\alpha = -\tfrac{1}{2}(k - 1) \qquad \text{and} \qquad \beta = -\tfrac{1}{4}(k + 1)^2\]
     which leads to a direct relationship between actual price of the option $c(s,t)$, and the modified price $u(x,\tau)$.
-    Substituting $\alpha$ and $\beta$ we find this relationship is given by:
+    Substituting in $\alpha$ and $\beta$ we find this relationship is given by:
     \[c(s,t) = K\, u(x,\tau)\, \exp\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
     which will later be used by the ANN.
 \end{frame}
 
 \begin{frame}
-    After substituting this relationship into the original Black-Scholes equation, we are left with the heat equation. So we see that the Black-Scholes equation can be transformed to the heat equation, where $x$ is the price of the stock after transformations, $\tau$ is the unit of time after transformations, and $u$ is the price of the option after transformations:
+    We substitute this relationship into the original Black-Scholes equation, which cancels out the extra terms, so we are left with the heat equation, leading to the conclusion that options pricing dynamic is similar to heat dissipation. We have $x$ is the price of the stock after transformations, $\tau$ is the unit of time after transformations, and $u$ is the price of the option after transformations:
     \[\frac{\partial u}{\partial \tau} = \frac{\partial^2 u}{\partial x^2}, \qquad -\infty < x < \infty, \qquad \tau > 0\]
     Where we have the payoff boundary condition:
     \[u(x,0) = \max\!\left\{\exp\!\left(\tfrac{1}{2}(k+1)\,x\right) - \exp\!\left(\tfrac{1}{2}(k-1)\,x\right),\; 0\right\}\]
 \end{frame}
 
 \begin{frame}{Final Solution}
-    We then use the Gaussian kernel and substitute the solution $u(x, \tau)$ of this heat equation into our expression:
+    We substitute the solution $u(x, \tau)$ of this heat equation into our expression:
     \[c(s,t) = K\, u(x,\tau)\, \exp\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
-    Through the method we have learnt in class, and lots of cancellations, we can obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
+    We use the Gaussian kernel to solve this; we apply the solution formula, split the integral, and complete the square, allowing us to obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
     \[c = S_0 N(d_1) - K\exp(-rT)\,N(d_2) \qquad p = K\exp(-rT)\,N(-d_2) - S_0 N(-d_1)\]
     where
     \[d_1 = \frac{\ln\!\left(\dfrac{S_0}{K}\right) + \left(r + \dfrac{\sigma^2}{2}\right)(T - t)}{\sigma\sqrt{T - t}} \qquad \text{and} \qquad d_2 = d_1 - \sigma\sqrt{T - t}\]
-    $d_1$ and $d_2$ are parameters which represent risk-adjusted probabilities within the normal CDF $N(x)$, which comes from the Gaussian integral.
+    $d_1$ and $d_2$ are parameters which represent risk-adjusted probabilities within the normal CDF $N(x)$, which comes from the Gaussian integral. This algebra follows from many lines of working whilst using the method of solving the heat equation, which we have learnt in this course.
 \end{frame}
