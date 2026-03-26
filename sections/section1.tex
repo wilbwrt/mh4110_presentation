@@ -108,10 +108,9 @@
 \end{frame}
 
 \begin{frame}{Final Solution}
-    We then solve this much more simple PDE and find $u(x, \tau)$ using the Gaussian kernel. 
-    Substituting this into 
+    We then use the Gaussian kernel and substitute the solution $u(x, \tau)$ of this heat equation into our expression:
     \[c(s,t) = K\, u(x,\tau)\, \exp\!\left(-\tfrac{1}{2}(k - 1)\,x - \tfrac{1}{4}(k + 1)^2\,\tau \right)\]
-    we can obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
+    Through the method we have learnt in class, and lots of cancellations, we can obtain the solutions to the Black-Scholes equation, which shows the pricing of European call and put options:
     \[c = S_0 N(d_1) - K\exp(-rT)\,N(d_2) \qquad p = K\exp(-rT)\,N(-d_2) - S_0 N(-d_1)\]
     where
     \[d_1 = \frac{\ln\!\left(\dfrac{S_0}{K}\right) + \left(r + \dfrac{\sigma^2}{2}\right)(T - t)}{\sigma\sqrt{T - t}} \qquad \text{and} \qquad d_2 = d_1 - \sigma\sqrt{T - t}\]
