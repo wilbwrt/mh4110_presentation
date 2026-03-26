@@ -145,3 +145,45 @@
         \end{column}
     \end{columns}
 \end{frame}
+
+% =========================
+\begin{frame}{Table 3: Vale Options (VALED)}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{images/table3.png}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item Errors vary significantly across contracts
+        \item In-the-money options (lower strike) generally show lower errors
+        \item Higher errors tend to correspond to less frequently traded contracts
+        \item \textbf{Key insight:} NN performance depends on the option's trading activity and moneyness
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Figure 3: Model Comparison (VALED)}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{images/figure3.png}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \textbf{Each plot shows three curves:}
+      \begin{itemize}
+        \item Market price (OPTION)
+        \item Black-Scholes solution (BLS)
+        \item Neural network output (NN)
+      \end{itemize}
+      \vspace{0.5em}
+      \begin{itemize}
+        \item (a) Best NN case: low MSE, NN tracks market closely
+        \item (b) Worst NN case: high MSE, NN deviates more noticeably
+      \end{itemize}
+      \vspace{0.5em}
+      \textbf{Key insight:} NN outperforms BLS overall, but accuracy is not uniform across all contracts
+    \end{column}
+  \end{columns}
+\end{frame}

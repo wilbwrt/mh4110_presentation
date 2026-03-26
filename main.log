@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  26 MAR 2026 00:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.4)  26 MAR 2026 10:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1182,7 +1182,11 @@ Overfull \vbox (25.00443pt too high) detected at line 50
 
 ] [14
 
-] [15
+]
+Overfull \vbox (3.0936pt too high) detected at line 118
+ []
+
+[15
 
 ]) (./sections/section2.tex (./main.toc) [16
 
@@ -1279,27 +1283,27 @@ Package pdftex.def Info: images/Figure22.png  used on input line 147.
 (pdftex.def)             Requested size: 199.1693pt x 67.74913pt.
  [36
 
- <./images/Figure21.png> <./images/Figure22.png>]) (./sections/section4.tex (./main.toc) [37
-
-] (./main.toc) [38
-
-]
-<images/table3.png, id=5452, 448.67625pt x 249.18094pt>
+ <./images/Figure21.png> <./images/Figure22.png>]
+<images/table3.png, id=5171, 448.67625pt x 249.18094pt>
 File: images/table3.png Graphic file (type png)
 <use images/table3.png>
-Package pdftex.def Info: images/table3.png  used on input line 20.
+Package pdftex.def Info: images/table3.png  used on input line 165.
 (pdftex.def)             Requested size: 207.13776pt x 115.03525pt.
- [39
+ [37
 
  <./images/table3.png>]
-<images/figure3.png, id=5586, 460.72125pt x 331.99031pt>
+<images/figure3.png, id=5307, 460.72125pt x 331.99031pt>
 File: images/figure3.png Graphic file (type png)
 <use images/figure3.png>
-Package pdftex.def Info: images/figure3.png  used on input line 44.
+Package pdftex.def Info: images/figure3.png  used on input line 189.
 (pdftex.def)             Requested size: 207.13776pt x 149.25748pt.
- [40
+ [38
 
- <./images/figure3.png>] [41
+ <./images/figure3.png>]) (./sections/section4.tex (./main.toc) [39
+
+] (./main.toc) [40
+
+] [41
 
 ] [42
 
@@ -1347,7 +1351,7 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 729F2C427E616DBBF849918FDEB0DFF1;2332.
+(rerunfilecheck)             Checksum: E62781BC260AF3A1BEF5525F697EE57D;2332.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -1355,13 +1359,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  35842 strings out of 467533
  705780 string characters out of 5423669
- 1556851 words of memory out of 5000000
+ 1556852 words of memory out of 5000000
  63971 multiletter control sequences out of 15000+600000
  652438 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,838b,1916s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on main.pdf (53 pages, 1203987 bytes).
+Output written on main.pdf (53 pages, 1204726 bytes).
 PDF statistics:
  7460 PDF objects out of 8907 (max. 8388607)
  4463 compressed objects within 45 object streams
