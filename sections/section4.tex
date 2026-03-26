@@ -99,7 +99,7 @@ Not all options have a simple formula like the standard European call.
 
 \vspace{0.3cm}
 
-For example, an Asian option depends on the average stock price over time:
+For example, an option depending on the average stock price over time:
 \[
 V = V\Big(S(t), \frac{1}{T}\int_0^T S(t) dt, t\Big)
 \]
@@ -120,7 +120,7 @@ However, the Black--Scholes PDE still applies as it gives a rule that the option
 \item Neural networks must be trained using many sampled points from the PDE domain
 \item Each training step requires computing derivatives of the network output (PDE residual)
 \item This makes training significantly slower than standard finite difference methods for simple PDEs
-\item For the classical Black--Scholes model, closed-form or fast numerical methods are often more efficient
+\item For the Black--Scholes model, closed-form or fast numerical methods are often more efficient
 \end{itemize}
 
 \end{frame}
@@ -128,7 +128,7 @@ However, the Black--Scholes PDE still applies as it gives a rule that the option
 \begin{frame}{Limitation 2: Harder to Interpret}
 
 \begin{itemize}
-\item Neural networks are often described as "black-box" models because the internal decision process is not easily interpretable
+\item Neural networks are often described as black-box models because the internal decision process is not easily interpretable
 \item Unlike analytical Black--Scholes formulas, it is difficult to see how individual inputs (e.g. volatility or strike price) affect the output
 \item Model accuracy depends strongly on training data and network design choices
 \item This lack of transparency can be a concern in financial settings where interpretability is important
